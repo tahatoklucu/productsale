@@ -7,6 +7,7 @@ import ContactUs from './components/ContactUs';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/about' exact element={<About />} />
         <Route path='/contact' exact element={<ContactUs />} />
         <Route path='/login' exact element={<Login />} />
+        <Route path='/register' exact element={<Register />} />
       </Routes>
       <Footer />
     </div>
