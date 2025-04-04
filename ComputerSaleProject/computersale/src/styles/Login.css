@@ -1,0 +1,53 @@
+.mainForm {
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #041e2f;
+}
+
+.mainForm .form-label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #dee0ea;
+}
+
+.form-input {
+    width: 100%;
+    padding: 8px 7px;
+    font-size: 16px;
+    border: 2px solid #041e2f;
+    background-color: rgba(255, 222, 173, 0.867);
+    color: #041e2f;
+    margin: 5px 0;
+    outline: none;
+    border-radius: 10px;
+}
+
+.form-input::placeholder {
+    color: #041e2f;
+}
+
+.form-div {
+    margin-bottom: 10px;
+}
+
+.login-button {
+    width: 7%;
+    padding: 8px 8px;
+    margin: 16px 0;
+    background-color: rgba(255, 222, 173, 0.867);
+    color: #041e2f;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+}
+
+.register-link {
+    color: #dee0ea;
+}

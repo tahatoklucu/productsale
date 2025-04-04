@@ -30,7 +30,7 @@
     height: 90px;
 }
 
-.navbar a {
+.navbar .navbar-item {
     color: #5abed8;
     text-decoration: none;
     margin-right: 20px;
@@ -47,4 +47,20 @@
     text-align: center;
     align-items: center;
     width: 60%;
+}
+
+.main .login-register {
+    padding: 12px;
+    background-color: #5abed8;
+    text-decoration: none;
+    color: #000;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.main .login-register:hover {
+    background-color: rgba(255, 222, 173, 0.867);
+    color: #041e2f;
 }
