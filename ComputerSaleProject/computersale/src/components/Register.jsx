@@ -45,6 +45,11 @@ function Register() {
             <input type='password' value={values.confirmPassword} onChange={handleChange} id='confirmPassword' placeholder='Please enter your password again' className={errors.confirmPassword ? ' form-input input-error' : 'form-input'}/>
             {errors.confirmPassword && <p className='error'>{errors.confirmPassword}</p>}
         </div>
+        <div className='form-div'>
+            <input type='checkbox' name='isAccepted' className={errors.isAccepted ? 'input-error' : ''} /> 
+            <span className='form-span'>I accept to the terms of use.</span>
+            {errors.isAccepted && <p className='error'>{errors.isAccepted}</p>}
+        </div>
         <button className='login-button'>Register</button>
         <Link to='/login' className='back-link'>Back to the login page</Link>
     </form>
