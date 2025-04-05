@@ -27,7 +27,7 @@
 
 .navbar .main img {
     height: 90px;
-    margin-left: 40px;
+    margin-left: 50px;
 }
 
 .navbar .navbar-item {
@@ -46,12 +46,11 @@
 .navbar .LinkMain {
     text-align: center;
     align-items: center;
-    width: 75%;
+    width: 70%;
 }
 
 .main .login-register {
     padding: 10px;
-    margin-right: 10px;
     text-align: center;
     background-color: #5abed8;
     text-decoration: none;

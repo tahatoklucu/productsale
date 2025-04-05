@@ -10,7 +10,6 @@ function Navbar() {
             <img src={ComputerLogo} alt='computerLogo'/>
             <h2 className='computerText'>Computer Sale</h2>
             <div className='LinkMain'>
-                <NavLink className="navbar-item" to="/">Home</NavLink>
                 <NavLink className="navbar-item" to="/computers">Computers</NavLink>
                 <NavLink className="navbar-item" to="/about">About Us</NavLink>
                 <NavLink className="navbar-item" to="/contact">Contact Us</NavLink>
