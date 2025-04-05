@@ -15,7 +15,7 @@ function ContactUs() {
           <input className='contact-input' type='email' name='email' placeholder='Please enter Email' />
           <label className='contact-label'>Your Message</label>
           <textarea rows="6" name='message' placeholder='Please enter your message' />
-          <button className='contact-submit'>Submit</button>
+          <button className='contact-button'>Submit</button>
         </form>
       </div>
     </div>

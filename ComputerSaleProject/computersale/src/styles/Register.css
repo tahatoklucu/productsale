@@ -1,4 +1,4 @@
-.mainForm {
+.register-mainForm {
     width: 500px;
     justify-content: center;
     align-items: center;
@@ -9,13 +9,13 @@
     background-color: #041e2f;
 }
 
-.mainForm .form-label {
+.register-mainForm .register-label {
     font-size: 18px;
     font-weight: bold;
     color: #dee0ea;
 }
 
-.form-input {
+.register-input {
     width: 100%;
     padding: 8px 7px;
     font-size: 16px;
@@ -27,15 +27,16 @@
     border-radius: 10px;
 }
 
-.form-input::placeholder {
+.register-input::placeholder {
     color: #041e2f;
 }
 
-.form-div {
+.register-div {
     margin-bottom: 10px;
+    width: 300px;
 }
 
-.login-button {
+.register-button {
     width: 7%;
     padding: 8px 8px;
     margin: 16px 0;
@@ -46,4 +47,8 @@
     cursor: pointer;
     border-radius: 20px;
     border: none;
+}
+
+.register-link {
+    color: #dee0ea;
 }

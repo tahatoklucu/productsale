@@ -12,7 +12,6 @@
     width: 100%;
     display: flex;
     align-items: center;
-    padding-left: 150px;
 }
 
 .navbar .computerText {
@@ -28,6 +27,7 @@
 
 .navbar .main img {
     height: 90px;
+    margin-left: 40px;
 }
 
 .navbar .navbar-item {
@@ -46,11 +46,13 @@
 .navbar .LinkMain {
     text-align: center;
     align-items: center;
-    width: 60%;
+    width: 75%;
 }
 
 .main .login-register {
-    padding: 12px;
+    padding: 10px;
+    margin-right: 10px;
+    text-align: center;
     background-color: #5abed8;
     text-decoration: none;
     color: #000;
