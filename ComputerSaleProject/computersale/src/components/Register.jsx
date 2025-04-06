@@ -1,18 +1,14 @@
 import React from 'react'
 import { useFormik } from 'formik'
 import { registerSchema } from '../schemas';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Register.css';
 
 
-const onSubmit = async (values, actions) => {
-    await new Promise((resolve) => {
-        setTimeout(resolve, 1000)
-    });
-    actions.resetForm();
-}
-
 function Register() {
+
+    const navigate = useNavigate();
+
     const {values, errors, isSubmitting, handleChange, handleSubmit} = useFormik({
             initialValues: {
                 username: '',
@@ -22,7 +18,12 @@ function Register() {
                 isAccepted: '',
             },
             validationSchema: registerSchema,
-            onSubmit
+            onSubmit: () => {
+                localStorage.setItem("username", values.username);
+                localStorage.setItem("email", values.email);
+                localStorage.setItem("password", values.password);
+                navigate("/login")
+            }
         });
   return (
     <form onSubmit={handleSubmit} className='register-mainForm'>
@@ -46,7 +47,7 @@ function Register() {
             <input type='password' value={values.confirmPassword} onChange={handleChange} id='confirmPassword' placeholder='Please enter your password again' className={errors.confirmPassword ? ' register-input input-error' : 'register-input'}/>
             {errors.confirmPassword && <p className='error'>{errors.confirmPassword}</p>}
         </div>
-        <button className='register-button'>Register</button>
+        <button className='register-button' type='submit'>Register</button>
         <Link to='/login' className='register-link'>Back to the login page</Link>
     </form>
   )
