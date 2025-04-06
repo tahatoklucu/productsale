@@ -20,6 +20,7 @@ function Login() {
             const password = localStorage.getItem("password");
             if(values.username == username && values.password == password) {
                 navigate("/");
+                alert("You're logged in!");
             }
         }
     });
