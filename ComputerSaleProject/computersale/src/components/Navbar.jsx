@@ -6,8 +6,9 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import PersonIcon from '@mui/icons-material/Person';
 
 function Navbar({basketCount, loggedIn}) {
-  const logOut = () => {
-      JSON.parse(localStorage.setItem("loggedIn", false));
+  
+  const logOut = () => {  
+    JSON.parse(localStorage.setItem("loggedIn", false));
   }
 
   return (
