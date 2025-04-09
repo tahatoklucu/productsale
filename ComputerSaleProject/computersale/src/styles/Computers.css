@@ -56,3 +56,29 @@
     margin-top: 10px;
     font-size: 20px;
 }
+
+.computerItem .buttons {
+    display: block;
+    width: 100%;
+}
+
+.computerItem .addCart {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 222, 173, 0.867);
+    color: #000;
+    margin-right: 20px;
+    margin-top: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.computerItem .details {
+    text-decoration: none;
+    background-color: #041e2f;
+    padding: 8px;
+    color: #dee0ea;
+    border-radius: 10px;
+}
+
