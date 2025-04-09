@@ -16,7 +16,9 @@ function Navbar({basketCount}) {
                 <NavLink className="navbar-item" to="/contact">Contact Us</NavLink>
             </div>
             <span className='basketCount'>{basketCount}</span>
-            <ShoppingBasketIcon style={{fontSize:"24px", marginRight: "20px", color:"#dee0ea"}} />
+            <Link to="/mycart"> 
+              <ShoppingBasketIcon style={{fontSize:"24px", marginRight: "20px", color:"#dee0ea"}} />
+            </Link>
             <Link className='login-register' to="/login">Log In / Register</Link>
         </div>
     </div>
