@@ -9,6 +9,7 @@ function Navbar({basketCount, loggedIn}) {
   
   const logOut = () => {  
     JSON.parse(localStorage.setItem("loggedIn", false));
+    loggedIn = false;
   }
 
   return (
@@ -26,13 +27,15 @@ function Navbar({basketCount, loggedIn}) {
               <ShoppingBasketIcon style={{fontSize:"24px", marginRight: "20px", color:"#dee0ea"}} />
             </Link>
             {JSON.parse(localStorage.getItem("loggedIn")) ? 
+             <>
               <div className='loggedIn'>
-                <PersonIcon style={{color: "rgba(255, 222, 173, 0.867)", fontSize: "24px"}} /> 
+                <Link to="/user-details">
+                  <PersonIcon style={{color: "rgba(255, 222, 173, 0.867)", fontSize: "24px"}} /> 
+                </Link>
                 <span className='loggedIn-person'>{localStorage.getItem("username")}</span>
-                <div className='logOut'>
-                  <Link to="/logout" onClick={logOut}>Log Out</Link>
-                </div>
               </div>
+              <Link to="/login" onClick={logOut} className='logOut-link'>Log Out</Link>
+              </>
               : 
               <Link className='login-register' to="/login">Log In / Register</Link>}
         </div>
