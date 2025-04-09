@@ -3,7 +3,7 @@ import { Data } from '../helpers/Data';
 import ComputerItem from './ComputerItem';
 import '../styles/Computers.css';
 
-function Computers() {
+function Computers({setBasketCount}) {
   return (
     <div className='computers'>
         <h1 className='computerTitle'>Our Computers for Sale</h1>
@@ -16,6 +16,7 @@ function Computers() {
                         name = {computerItem.name}
                         content = {computerItem.content}
                         price = {computerItem.price}
+                        onAddToCart = {() => setBasketCount(prev => prev + 1)}
                     />
                 )
             })}

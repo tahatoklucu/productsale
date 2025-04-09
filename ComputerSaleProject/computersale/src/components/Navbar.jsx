@@ -1,13 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import ComputerLogo from '../assets/computerLogo.png';
 import '../styles/Navbar.css';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 
-function Navbar() {
-
-  const [basketCount, setBasketCount] = useState(0);
-
+function Navbar({basketCount}) {
   return (
     <div className='navbar'>
         <div className='main'>

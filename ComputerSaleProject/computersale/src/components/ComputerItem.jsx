@@ -1,8 +1,9 @@
 import React from 'react'
 import '../styles/Computers.css'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
-function ComputerItem({image, name, content, price}) {
+function ComputerItem({image, name, content, price, onAddToCart}) {
 
   return (
     <div className='computerItem'>
@@ -11,7 +12,7 @@ function ComputerItem({image, name, content, price}) {
         <h6>{content}</h6>
         <p>{price}</p>
         <div className='buttons'>
-          <button className='addCart'>Add to cart</button>
+          <button className='addCart' onClick={onAddToCart}>Add to cart</button>
           <Link className='details' to="/details">Details</Link>
         </div>
     </div>
