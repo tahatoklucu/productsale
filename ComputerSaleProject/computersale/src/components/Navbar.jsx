@@ -29,7 +29,7 @@ function Navbar({basketCount, loggedIn}) {
                 <PersonIcon style={{color: "rgba(255, 222, 173, 0.867)", fontSize: "24px"}} /> 
                 <span className='loggedIn-person'>{localStorage.getItem("username")}</span>
                 <div className='logOut'>
-                  <Link to="/login" onClick={logOut}>Log Out</Link>
+                  <Link to="/logout" onClick={logOut}>Log Out</Link>
                 </div>
               </div>
               : 
