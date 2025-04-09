@@ -77,3 +77,16 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+.loggedIn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.loggedIn-person {
+    color: rgba(255, 222, 173, 0.867);
+    font-size: 14px;
+}

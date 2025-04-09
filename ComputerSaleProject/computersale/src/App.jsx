@@ -12,15 +12,16 @@ import { useState } from 'react';
 function App() {
 
   const [basketCount, setBasketCount] = useState(0);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   return (
     <div className='mainHome'>
-      <Navbar basketCount={basketCount} />
+      <Navbar basketCount={basketCount} loggedIn={loggedIn} />
       <Routes>
         <Route path='/' exact element={<Computers setBasketCount={setBasketCount} />}  />
         <Route path='/about' exact element={<About />} />
         <Route path='/contact' exact element={<ContactUs />} />
-        <Route path='/login' exact element={<Login />} />
+        <Route path='/login' exact element={<Login setLoggedIn={setLoggedIn} />} />
         <Route path='/register' exact element={<Register />} />
       </Routes>
       <Footer />

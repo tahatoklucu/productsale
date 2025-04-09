@@ -4,7 +4,7 @@ import { loginSchema } from '../schemas';
 import '../styles/Login.css'
 import { Link, useNavigate } from 'react-router-dom';
 
-function Login() {
+function Login({setLoggedIn}) {
 
     const navigate = useNavigate();
 
@@ -21,6 +21,10 @@ function Login() {
             if(values.username == username && values.password == password) {
                 navigate("/");
                 alert("You're logged in!");
+                setLoggedIn(
+                    true,
+                    localStorage.setItem("loggedIn", true)
+                );
             }
         }
     });
