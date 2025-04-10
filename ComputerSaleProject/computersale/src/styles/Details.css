@@ -1,0 +1,26 @@
+.detailsMain {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #041e2f;
+}
+
+.details-title {
+    padding: 50px;
+    font-size: 60px;
+    color: rgba(255, 222, 173, 0.867);
+} 
+
+.details-left {
+    display: block;
+    width: 700px;
+    text-align: left;
+}
+
+.details-image {
+    width: 700px;
+    border-radius: 10px;
+}

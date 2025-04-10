@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Login from './components/Login';
 import Register from './components/Register';
+import Details from './components/Details';
 import { useState } from 'react';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path='/contact' exact element={<ContactUs />} />
         <Route path='/login' exact element={<Login setLoggedIn={setLoggedIn} />} />
         <Route path='/register' exact element={<Register />} />
+        <Route path='/details' exact element={<Details />} />
       </Routes>
       <Footer />
     </div>
