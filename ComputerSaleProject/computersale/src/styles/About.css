@@ -56,3 +56,9 @@
         width: 400px;
     }
 }
+
+@media (max-width: 500px) {
+    .aboutBottom p {
+        width: 270px;
+    }
+}
