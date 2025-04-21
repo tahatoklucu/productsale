@@ -47,3 +47,9 @@
     border-radius: 20px;
     border: none;
 }
+
+@media (max-width: 1100px) {
+    .login-button {
+        width: 90px;
+    }
+}

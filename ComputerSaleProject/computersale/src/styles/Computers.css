@@ -82,3 +82,16 @@
     border-radius: 10px;
 }
 
+@media (max-width: 1200px) {
+    .computerList{
+        display: flex;
+        flex-direction: column; 
+        width: 100%;
+    }   
+}
+
+@media (max-width: 768px) {
+    .computers .computerTitle{
+        font-size: 45px;
+    }
+}

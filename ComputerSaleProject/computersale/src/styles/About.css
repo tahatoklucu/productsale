@@ -39,3 +39,20 @@
     justify-content: center;
     transform: translateY(-40px);
 }
+
+@media (max-width: 1200px) {
+    .aboutBottom p {
+        font-size: 16px;
+        width: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about .aboutBottom h1 {
+        font-size: 60px;
+    }
+    .aboutBottom p {
+        font-size: 14px;
+        width: 400px;
+    }
+}
