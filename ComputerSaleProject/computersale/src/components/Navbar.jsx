@@ -20,11 +20,11 @@ function Navbar({basketCount, loggedIn}) {
             <div className='LinkMain'>
                 <NavLink className="navbar-item" to="/">Computers</NavLink>
                 <NavLink className="navbar-item" to="/about">About Us</NavLink>
-                <NavLink className="navbar-item" to="/contact">Contact Us</NavLink>
+                <NavLink className="navbar-item" to="/contact">Contact</NavLink>
             </div>
             <span className='basketCount'>{basketCount}</span>
-            <Link to="/mycart"> 
-              <ShoppingBasketIcon style={{fontSize:"24px", marginRight: "20px", color:"#dee0ea"}} />
+            <Link to="/mycart" className='shopIcon'> 
+              <ShoppingBasketIcon />
             </Link>
             {JSON.parse(localStorage.getItem("loggedIn")) ? 
              <>
