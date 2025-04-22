@@ -22,7 +22,7 @@ function Register() {
                 localStorage.setItem("username", values.username);
                 localStorage.setItem("email", values.email);
                 localStorage.setItem("password", values.password);
-                alert("Your registration was completed successfully.s");
+                alert("Your registration was completed successfully.");
                 navigate("/login")
             }
         });
