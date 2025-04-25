@@ -15,3 +15,22 @@
     font-size: 12px;
     text-align: left;
 }
+
+.btn-warning {
+    background-color: #dee0ea;
+    border: none;
+    margin-right: 10px;
+}
+
+.btn-warning:hover{
+    background-color: rgba(255, 222, 173, 0.867);
+}
+
+.btn-info {
+    background-color: #f1a10d;
+    border: none;
+}
+
+.btn-info:hover {
+    background-color: rgba(255, 222, 173, 0.867);
+}

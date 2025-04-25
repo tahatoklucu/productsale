@@ -10,8 +10,8 @@ function ShopItem({image, title, desc, price, onAddToCart}) {
         <h4>{title}</h4>
         <p>{price} $</p>
         <div className='buttons'>
-          <button className='addCart' onClick={onAddToCart}>Add to cart</button>
-          <Link className='details' to="/details">Details</Link>
+          <button className='btn btn-warning' onClick={onAddToCart}>Add to cart</button>
+          <Link className='btn btn-info' to="/details">Details</Link>
         </div>
     </div>
   )
