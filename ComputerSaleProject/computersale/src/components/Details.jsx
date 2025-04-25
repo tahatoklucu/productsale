@@ -46,9 +46,12 @@ function Details() {
           <img src={product.images} alt={product.title} />
         </div>
         <div className='details-right'>
+          <label className='product-label'>Product Name:</label>
           <h4 className='details-head'>{product.title}</h4>
+          <label className='product-label'>Product Details:</label>
           <h6 className='details-desc'>{product.description}</h6>
-          <p>{product.price} $</p>
+          <label className='product-label'>Product Price:</label>
+          <p className='details-price'>{product.price} $</p>
         </div>
       </div>
       

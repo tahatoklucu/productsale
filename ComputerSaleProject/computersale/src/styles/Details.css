@@ -35,3 +35,21 @@
     color: #dee0ea;
     font-weight: bold;
 }
+
+.product-label {
+    color: rgba(255, 222, 173, 0.867);
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.details-desc {
+    color: #dee0ea;
+    width: 80%;
+}
+
+.details-price {
+    color: rgba(170, 240, 100, 0.974);
+    font-weight: bold;
+    font-size: 40px;
+    margin-top: 0;
+}
