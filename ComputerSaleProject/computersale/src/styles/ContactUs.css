@@ -7,10 +7,11 @@
   
 .contact .left-side {
     height: 100%;
-    flex: 50%;
+    flex: 30%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    margin-left: 50px;
 }
   
 .contact .right-side {

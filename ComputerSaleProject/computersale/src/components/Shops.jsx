@@ -8,8 +8,8 @@ function Shops({setBasketCount}) {
 
     const [image, setImage] = useState([]);
 
-    useEffect( async () => {
-        await axios.get("https://api.escuelajs.co/api/v1/products?offset=3&limit=12")
+    useEffect(() => {
+        axios.get("https://api.escuelajs.co/api/v1/products?offset=3&limit=12")
         .then(response => {
             setImage(response.data);
         })

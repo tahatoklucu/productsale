@@ -1,5 +1,5 @@
 import React from 'react'
-import BannerImage from '../assets/banner2.jpg';
+import BannerImage from '../assets/contactBanner.png';
 import '../styles/ContactUs.css';
 
 function ContactUs() {
