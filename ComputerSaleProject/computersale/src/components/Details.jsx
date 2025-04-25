@@ -6,7 +6,6 @@ function Details({}) {
     <div className='detailsMain'>
       <h1 className='details-title'>Details</h1>
       <div className='details-left'>
-        
       </div>
     </div>
   )

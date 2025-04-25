@@ -23,7 +23,7 @@ function App() {
         <Route path='/contact' exact element={<ContactUs />} />
         <Route path='/login' exact element={<Login setLoggedIn={setLoggedIn} />} />
         <Route path='/register' exact element={<Register />} />
-        <Route path='/details' exact element={<Details />} />
+        <Route path='/products/:id' exact element={<Details />} />
       </Routes>
       <Footer />
     </div>

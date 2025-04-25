@@ -74,6 +74,7 @@ function Shops({setBasketCount}) {
                     {filteredProducts.map(item => (
                         <ShopItem
                             key={item.id}
+                            id={item.id}
                             title={item.title}
                             price={item.price}
                             desc={item.description}
