@@ -17,7 +17,7 @@ function Navbar({basketCount, loggedIn}) {
     <div className='navbar'>
         <div className='main'>
             <img src={ComputerLogo} alt='computerLogo'/>
-            <h2 className='computerText'>Products Sale</h2>
+            <h2 className='computerText'>Product Sale</h2>
             <div className='LinkMain'>
                 <NavLink className="navbar-item" to="/">Products</NavLink>
                 <NavLink className="navbar-item" to="/about">About Us</NavLink>
