@@ -66,6 +66,13 @@
     border-radius: 10px;
 }
 
+.searchForm {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    width: 20%;
+}
+
 @media (max-width: 1200px) {
     .computerList{
         display: flex;

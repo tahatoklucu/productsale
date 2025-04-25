@@ -3,6 +3,7 @@ import ShopItem from './ShopItem';
 import '../styles/Shops.css';
 import axios from 'axios';
 import { Alert } from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
 
 
 function Shops({setBasketCount}) {
@@ -47,14 +48,14 @@ function Shops({setBasketCount}) {
   return (
     <div className='computers'>
         <h1 className='computerTitle'>Our Products for Sale</h1>
-        <form onSubmit={handleSearch}>
-                <input 
-                    type='text' 
+        <form onSubmit={handleSearch} className='searchForm'>
+                <Form.Control 
+                    type='search' 
                     placeholder='Search products by title...'
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
-                <button type='submit'>Search</button>
+                <button className='btn btn-info' type='submit'>Search</button>
         </form>
         <div className='computerList'>
 
