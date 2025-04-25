@@ -75,7 +75,21 @@
 }
 
 @media (max-width: 768px) {
-    .computers .computerTitle{
-        font-size: 45px;
+    .computerItem {
+        width: 300px;
+        height: 400px;
+    }
+    .computerItem .image{
+        height: 200px;
+    }
+    .computerItem h4 {
+        font-size: 14px;
+    }
+    .computerItem p {
+        font-size: 16px;
+    }
+    .btn-secondary {
+        font-size: 10px;
+        margin-right: 10px;
     }
 }
