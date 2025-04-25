@@ -57,20 +57,20 @@ function Shops({setBasketCount}) {
                 />
                 <button className='btn btn-info' type='submit'>Search</button>
         </form>
-        <div className='computerList'>
-
              {isLoading ? (
-                <>
-                {[
-                  'light',
-                ].map((variant) => (
-                  <Alert key={variant} variant={variant}>
-                    Loading...
-                  </Alert>
-                ))}
-              </>
+                <div className='loading-container'>
+                    <span className='loading-span'>
+                        {[
+                        'light',
+                        ].map((variant) => (
+                        <Alert key={variant} variant={variant}>
+                            Loading...
+                        </Alert>
+                        ))}
+                    </span>
+              </div>
             ) : (
-                <>
+                <div className='computerList'>
                     {filteredProducts.map(item => (
                         <ShopItem
                             key={item.id}
@@ -82,9 +82,8 @@ function Shops({setBasketCount}) {
                             onAddToCart={() => setBasketCount(prev => prev + 1)}
                         />
                     ))}
-                </>
+                </div>
             )}
-        </div>
     </div>
   )
 }

@@ -73,6 +73,25 @@
     width: 20%;
 }
 
+.loading-container {
+    height: 46vh;
+}
+
+.loading-span {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.alert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vh;
+}
+
 @media (max-width: 1200px) {
     .computerList{
         display: flex;
