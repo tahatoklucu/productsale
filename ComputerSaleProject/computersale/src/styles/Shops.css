@@ -43,18 +43,19 @@
 
 .computerItem h4 {
     margin: 15px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     text-align: left;
     margin-left: 50px;
     color: rgba(255, 222, 173, 0.867);
     margin-right: 50px;
+    height: 40px;
 }
 
 .computerItem p {
     margin-top: 10px;
     font-size: 20px;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.89);
     text-align: left;
     margin-left: 50px;
     font-weight: bold;
