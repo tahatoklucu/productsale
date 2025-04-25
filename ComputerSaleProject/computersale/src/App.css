@@ -34,3 +34,7 @@
 .btn-info:hover {
     background-color: rgba(255, 222, 173, 0.867);
 }
+
+.btn-danger {
+    margin-left: 20px;
+}

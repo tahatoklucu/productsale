@@ -97,16 +97,6 @@
     font-size: 14px;
 }
 
-.logOut-link {
-    text-decoration: none;
-    color: #000;
-    font-size: 14px;
-    margin-left: 10px;
-    background-color: #b81414;
-    padding: 10px;
-    border-radius: 10px;
-}
-
 @media (max-width: 500px) {
     .navbar .main img{
         height: 30px;

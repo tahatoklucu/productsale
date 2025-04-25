@@ -35,7 +35,7 @@ function Navbar({basketCount, loggedIn}) {
                 </Link>
                 <span className='loggedIn-person'>{localStorage.getItem("username")}</span>
               </div>
-              <Link to="/login" onClick={logOut} className='logOut-link'>Log Out</Link>
+              <Link to="/login" onClick={logOut} className='btn btn-danger'>Log Out</Link>
               </>
               : 
               <Link className='btn btn-secondary' to="/login">Login</Link>}
