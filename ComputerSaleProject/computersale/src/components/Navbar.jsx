@@ -5,6 +5,7 @@ import '../styles/Navbar.css';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import PersonIcon from '@mui/icons-material/Person';
 
+
 function Navbar({basketCount, loggedIn}) {
   
   const logOut = () => {  
@@ -18,7 +19,7 @@ function Navbar({basketCount, loggedIn}) {
             <img src={ComputerLogo} alt='computerLogo'/>
             <h2 className='computerText'>Computer Sale</h2>
             <div className='LinkMain'>
-                <NavLink className="navbar-item" to="/">Computers</NavLink>
+                <NavLink className="navbar-item" to="/">Products</NavLink>
                 <NavLink className="navbar-item" to="/about">About Us</NavLink>
                 <NavLink className="navbar-item" to="/contact">Contact</NavLink>
             </div>
@@ -37,7 +38,7 @@ function Navbar({basketCount, loggedIn}) {
               <Link to="/login" onClick={logOut} className='logOut-link'>Log Out</Link>
               </>
               : 
-              <Link className='login-register' to="/login">Log In / Register</Link>}
+              <Link className='btn btn-light' to="/login">Log In / Register</Link>}
         </div>
     </div>
   )

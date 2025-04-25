@@ -15,7 +15,7 @@
 }
 
 .computerList {
-    width: 70vw;
+    width: 100vw;
     height: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -24,13 +24,13 @@
 
 .computerItem {
     border-radius: 15px;
-    width: 300px;
-    height: 350px;
+    width: 400px;
+    height: 460px;
     margin: 20px;
-    box-shadow: 0px 3px 15px rgba(255, 255, 255, 0.1);
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.7);
     text-align: center;
     transition: 0.3s ease-in-out;
+    
 }
 
 .computerItem:hover {
@@ -40,21 +40,22 @@
 }
 
 .computerItem div {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    margin-top: 20px;
     width: 100%;
-    height: 200px;
+    height: 300px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;   
 }
-.computerItem h1,h6 {
-    margin-top: 10px;
+
+.computerItem h4 {
+    margin: 15px;
 }
 
 .computerItem p {
     margin-top: 10px;
     font-size: 20px;
+    color: rgba(180, 45, 45, 0.867);
 }
 
 .computerItem .buttons {

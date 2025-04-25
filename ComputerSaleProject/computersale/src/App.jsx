@@ -1,6 +1,6 @@
 import './App.css'
 import {Route, Routes} from 'react-router-dom';
-import Computers from './components/Computers';
+import Shops from './components/Shops';
 import About from './components/About';
 import ContactUs from './components/ContactUs';
 import Navbar from './components/Navbar';
@@ -14,12 +14,11 @@ function App() {
 
   const [basketCount, setBasketCount] = useState(0);
   const [loggedIn, setLoggedIn] = useState(false);
-
   return (
     <div className='mainHome'>
       <Navbar basketCount={basketCount} loggedIn={loggedIn} />
       <Routes>
-        <Route path='/' exact element={<Computers setBasketCount={setBasketCount} />}  />
+        <Route path='/' exact element={<Shops setBasketCount={setBasketCount} />}  />
         <Route path='/about' exact element={<About />} />
         <Route path='/contact' exact element={<ContactUs />} />
         <Route path='/login' exact element={<Login setLoggedIn={setLoggedIn} />} />

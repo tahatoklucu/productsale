@@ -1,16 +1,14 @@
 import React from 'react'
-import '../styles/Computers.css'
+import '../styles/Shops.css'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
 
-function ComputerItem({image, name, content, price, onAddToCart}) {
+function ShopItem({image, title, desc, price, onAddToCart}) {
 
   return (
     <div className='computerItem'>
         <div style={{ backgroundImage: `url(${image})` }}></div>
-        <h1>{name}</h1>
-        <h6>{content}</h6>
-        <p>{price}</p>
+        <h4>{title}</h4>
+        <p>{price} $</p>
         <div className='buttons'>
           <button className='addCart' onClick={onAddToCart}>Add to cart</button>
           <Link className='details' to="/details">Details</Link>
@@ -19,4 +17,4 @@ function ComputerItem({image, name, content, price, onAddToCart}) {
   )
 }
 
-export default ComputerItem
+export default ShopItem
