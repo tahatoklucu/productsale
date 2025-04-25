@@ -3,12 +3,13 @@ import ShopItem from './ShopItem';
 import '../styles/Shops.css';
 import axios from 'axios';
 
+
 function Shops({setBasketCount}) {
 
     const [image, setImage] = useState([]);
 
-    useEffect(() => {
-        axios.get("https://api.escuelajs.co/api/v1/products?offset=3&limit=12")
+    useEffect( async () => {
+        await axios.get("https://api.escuelajs.co/api/v1/products?offset=3&limit=12")
         .then(response => {
             setImage(response.data);
         })
@@ -31,7 +32,6 @@ function Shops({setBasketCount}) {
                     category={item.category}
                     onAddToCart = {() => setBasketCount(prev => prev + 1)}
                 />
-                
             ))}
         </div>
     </div>

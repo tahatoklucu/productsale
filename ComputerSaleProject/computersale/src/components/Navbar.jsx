@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import ComputerLogo from '../assets/computerLogo.png';
+import productLogo from '../assets/productLogo.png';
 import '../styles/Navbar.css';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import PersonIcon from '@mui/icons-material/Person';
@@ -16,7 +16,7 @@ function Navbar({basketCount, loggedIn}) {
   return (
     <div className='navbar'>
         <div className='main'>
-            <img src={ComputerLogo} alt='computerLogo'/>
+            <img src={productLogo} alt='computerLogo'/>
             <h2 className='computerText'>Product Sale</h2>
             <div className='LinkMain'>
                 <NavLink className="navbar-item" to="/">Products</NavLink>
