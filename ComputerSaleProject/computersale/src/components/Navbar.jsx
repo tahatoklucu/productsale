@@ -38,7 +38,7 @@ function Navbar({basketCount, loggedIn}) {
               <Link to="/login" onClick={logOut} className='logOut-link'>Log Out</Link>
               </>
               : 
-              <Link className='btn btn-light' to="/login">Log In / Register</Link>}
+              <Link className='btn btn-secondary' to="/login">Log In / Register</Link>}
         </div>
     </div>
   )
