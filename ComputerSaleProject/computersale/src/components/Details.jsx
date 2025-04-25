@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/Details.css';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Alert } from 'react-bootstrap';
 
 function Details() {
@@ -40,7 +40,7 @@ function Details() {
 
   return (
     <div className='detailsMain'>
-      <h1 className='details-title'>Details</h1>
+      <h1 className='details-title'>Product Details</h1>
       <div className='details-container'>
         <div className='details-left'>
           <img src={product.images} alt={product.title} />
@@ -48,13 +48,16 @@ function Details() {
         <div className='details-right'>
           <label className='product-label'>Product Name:</label>
           <h4 className='details-head'>{product.title}</h4>
-          <label className='product-label'>Product Details:</label>
-          <h6 className='details-desc'>{product.description}</h6>
+          <label className='product-label'>Product Description:</label>
+          <p className='details-desc'>{product.description}</p>
           <label className='product-label'>Product Price:</label>
           <p className='details-price'>{product.price} $</p>
+          <div className='details-bottom'>
+            <button className='btn btn-warning'>Add to cart</button>
+            <Link to="/" className='btn btn-danger'>Back to the main page</Link>
+          </div>
         </div>
       </div>
-      
     </div>
   )
 }

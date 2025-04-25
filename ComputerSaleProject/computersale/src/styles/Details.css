@@ -27,7 +27,7 @@
 }
 
 .details-left img {
-    width: 500px;
+    width: 507.5px;
     border-radius: 10px;
 }
 
@@ -45,11 +45,12 @@
 .details-desc {
     color: #dee0ea;
     width: 80%;
+    font-size: 20px;
 }
 
 .details-price {
     color: rgba(170, 240, 100, 0.974);
     font-weight: bold;
     font-size: 40px;
-    margin-top: 0;
 }
+
