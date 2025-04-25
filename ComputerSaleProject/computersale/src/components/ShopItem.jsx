@@ -6,7 +6,8 @@ function ShopItem({image, title, desc, price, onAddToCart}) {
 
   return (
     <div className='computerItem'>
-        <div style={{ backgroundImage: `url(${image})` }}></div>
+        <img className='image' src={image}></img>
+        {/* <div style={{ backgroundImage: `url(${image})` }}></div> */}
         <h4>{title}</h4>
         <p>{price} $</p>
         <div className='buttons'>
