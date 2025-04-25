@@ -16,7 +16,7 @@ function Details() {
         const response = await axios.get(`https://api.escuelajs.co/api/v1/products/${id}`);
         setProduct(response.data);
       } catch (error) {
-        console.error("Ürün detayı alınamadı:", error);
+        console.error("Product details can't reached:", error);
       } finally {
         setLoading(false);
       }

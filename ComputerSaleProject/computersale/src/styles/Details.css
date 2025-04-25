@@ -34,6 +34,7 @@
 .details-head {
     color: #dee0ea;
     font-weight: bold;
+    font-size: 30px;
 }
 
 .product-label {
@@ -54,3 +55,6 @@
     font-size: 40px;
 }
 
+.details-bottom {
+    margin-top: 10px;
+}

@@ -34,7 +34,7 @@ function Shops({setBasketCount}) {
             if(searchTerm.trim() === '') {
                 response = await axios.get("https://api.escuelajs.co/api/v1/products?offset=3&limit=12");
             } else {
-                response = await axios.get(`https://api.escuelajs.co/api/v1/products/?offset=3&limit=12&title=${searchTerm}`)
+                response = await axios.get(`https://api.escuelajs.co/api/v1/products/?title=${searchTerm}`)
             }
             setFilteredProducts(response.data);
         } catch (error) {

@@ -5,7 +5,6 @@ import axios from 'axios';
 
 function ShopItem({id, image, title, desc, price, onAddToCart}) {
   const navigate = useNavigate();
-  console.log(id);
 
   const handleSubmit = async () => {
     try {
