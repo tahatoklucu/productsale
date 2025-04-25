@@ -14,13 +14,24 @@
     color: rgba(255, 222, 173, 0.867);
 } 
 
-.details-left {
-    display: block;
-    width: 700px;
-    text-align: left;
+.details-container {
+    display: flex;
 }
 
-.details-image {
-    width: 700px;
+.details-left {
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.details-left img {
+    width: 500px;
     border-radius: 10px;
+}
+
+.details-head {
+    color: #dee0ea;
+    font-weight: bold;
 }

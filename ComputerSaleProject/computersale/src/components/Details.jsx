@@ -41,14 +41,17 @@ function Details() {
   return (
     <div className='detailsMain'>
       <h1 className='details-title'>Details</h1>
-      <div className='details-left'>
-        <img src={product.images} alt={product.title} />
+      <div className='details-container'>
+        <div className='details-left'>
+          <img src={product.images} alt={product.title} />
+        </div>
+        <div className='details-right'>
+          <h4 className='details-head'>{product.title}</h4>
+          <h6 className='details-desc'>{product.description}</h6>
+          <p>{product.price} $</p>
+        </div>
       </div>
-      <div className='details-right'>
-        <h4 className='details-head'>{product.title}</h4>
-        <h6 className='details-desc'>{product.description}</h6>
-        <p>{product.price} $</p>
-      </div>
+      
     </div>
   )
 }
