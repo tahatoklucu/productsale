@@ -90,15 +90,15 @@ function Cart() {
             </div>
         ) : (        
         <div className='cart-table'>
-            <Table className='table' >
+            <Table className='table' responsive='sm'>
                 <thead>
                     <tr>
                         <th>Product</th>
                         <th>Name</th>
                         <th className='desc-head'>Description</th>
-                        <th>Product Price</th>
-                        <th>Quantity</th>
                         <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
                     </tr>
                 </thead>
                 <tbody>

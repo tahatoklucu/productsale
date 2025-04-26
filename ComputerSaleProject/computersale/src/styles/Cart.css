@@ -112,5 +112,16 @@
     .product-delete-btn {
         --bs-btn-padding-x: 0.1rem;
         --bs-btn-padding-y: 0.1rem;
+        font-size: 12px;
+    }
+    .table tr td {
+        font-size: 12px;
+    }
+    .button-adj {
+        margin: 0;
+        background-color: transparent;
+        border: none;
+        margin-left: 2px;
+        margin-right: 2px;
     }
 }
