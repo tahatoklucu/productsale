@@ -24,17 +24,19 @@ function Details() {
     fetchProduct();
   }, [id]);
 
-  if (loading) return <div className='loading-container'>
-      <span className='loading-span'>
-          {[
-          'light',
-          ].map((variant) => (
-          <Alert key={variant} variant={variant}>
-              Loading...
-          </Alert>
-          ))}
-      </span>
-    </div>;
+  if (loading) return (
+      <div className='loading-container'>
+        <span className='loading-span'>
+            {[
+            'light',
+            ].map((variant) => (
+            <Alert key={variant} variant={variant}>
+                Loading...
+            </Alert>
+            ))}
+        </span>
+      </div>
+      )
   if (error) return <div className="error">Error: {error}</div>;
   if (!product) return <div className="error">Product not found.</div>;
 

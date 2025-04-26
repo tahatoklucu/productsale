@@ -58,3 +58,13 @@
 .details-bottom {
     margin-top: 10px;
 }
+
+.loading-span {
+    margin: 0;
+}
+
+.loading-container {
+    height: 70vh;
+    background-color: #041e2f;
+    padding: 200px;
+}
