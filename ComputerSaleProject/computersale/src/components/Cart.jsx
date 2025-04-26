@@ -90,12 +90,12 @@ function Cart() {
             </div>
         ) : (        
         <div className='cart-table'>
-            <Table className='table'>
+            <Table className='table' >
                 <thead>
                     <tr>
                         <th>Product</th>
                         <th>Name</th>
-                        <th>Description</th>
+                        <th className='desc-head'>Description</th>
                         <th>Product Price</th>
                         <th>Quantity</th>
                         <th>Price</th>
@@ -104,23 +104,23 @@ function Cart() {
                 <tbody>
                     {cartProducts.map((product) => (
                         <tr key={product.id}>
-                            <td>
+                            <td className='button-main'>
                                 <button className='btn btn-light product-delete-btn' onClick={() => handleDelete(product.id)}>X</button>
                                 <img 
+                                    className='product-img'
                                     src={product.images[0]} 
                                     alt={product.title} 
-                                    style={{ width: '200px', borderRadius: '10px' }}
                                 />
                             </td>
-                            <td style={{width: '300px'}}>{product.title}</td>
-                            <td style={{width: '500px',fontSize: '14px' }}>{product.description}</td>
-                            <td style={{color: 'rgba(170, 240, 100, 0.974)'}}>${product.price}</td>
-                            <td style={{width: '200px'}}>
+                            <td className='product-title'>{product.title}</td>
+                            <td className='product-desc'>{product.description}</td>
+                            <td className='product-price'>${product.price}</td>
+                            <td className='product-quantity'>
                                 <button className='btn btn-primary button-adj' onClick={() => handleDecrease(product.id)}>-</button>
                                 {product.quantity}
                                 <button className='btn btn-primary button-adj' onClick={() => handleIncrease(product.id)}>+</button>
                             </td>
-                            <td style={{width: '100px'}}>${(product.price * product.quantity).toFixed(2)}</td>
+                            <td className='product-total'>${(product.price * product.quantity).toFixed(2)}</td>
                         </tr>
                     ))}
                 </tbody>
