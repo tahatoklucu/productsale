@@ -25,6 +25,17 @@ function Details() {
     fetchProduct();
   }, [id]);
 
+  const handleSubmit = async () => {
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    const existingItem = cartItems.find(item => item.id === id);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      cartItems.push({id, quantity: 1});
+    }
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+  }
+
   if (loading) return (
       <div className='loading-container'>
         <span className='loading-span'>
@@ -56,7 +67,7 @@ function Details() {
           <label className='product-label'>Product Price:</label>
           <p className='details-price'>{product.price} $</p>
           <div className='details-bottom'>
-            <button className='btn btn-warning'>Add to cart</button>
+            <button className='btn btn-warning' onClick={handleSubmit}>Add to cart</button>
             <Link to="/mycart" className='btn btn-info mycart'>My Cart</Link>
           </div>
           <Link to="/" className='btn btn-danger'>Back to the main page</Link>
