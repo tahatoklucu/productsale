@@ -69,7 +69,7 @@
     padding: 200px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
     .details-title {
         font-size: 30px;
     }

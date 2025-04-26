@@ -114,11 +114,17 @@
     .computerItem p {
         font-size: 16px;
     }
+    .computerItem .buttons {
+        width: auto;
+    }
     .btn-secondary {
         font-size: 10px;
         margin-right: 10px;
     }
     .searchForm {
         width: auto;
+    }
+    .footer {
+        height: 195px;
     }
 }
