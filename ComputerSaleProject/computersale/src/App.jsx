@@ -9,6 +9,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Details from './components/Details';
 import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   return (
     <div className='mainHome'>
+      <AnimatePresence mode='wait'>
       <Navbar basketCount={basketCount} loggedIn={loggedIn} />
       <Routes>
         <Route path='/' exact element={<Shops setBasketCount={setBasketCount} />}  />
@@ -26,6 +28,7 @@ function App() {
         <Route path='/products/:id' exact element={<Details />} />
       </Routes>
       <Footer />
+      </AnimatePresence>
     </div>
   )
 }

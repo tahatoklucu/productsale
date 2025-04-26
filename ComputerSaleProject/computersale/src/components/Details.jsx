@@ -3,6 +3,7 @@ import '../styles/Details.css';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
 import { Alert } from 'react-bootstrap';
+import { motion } from 'framer-motion';
 
 function Details() {
   const { id } = useParams();
@@ -41,7 +42,7 @@ function Details() {
   if (!product) return <div className="error">Product not found.</div>;
 
   return (
-    <div className='detailsMain'>
+    <motion.div className='detailsMain' initial={{opacity: 0.7}}  animate={{opacity: 1}} transition={{duration: 0.75}} exit={{opacity: 0}}>
       <h1 className='details-title'>Product Details</h1>
       <div className='details-container'>
         <div className='details-left'>
@@ -60,7 +61,7 @@ function Details() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

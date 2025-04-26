@@ -3,6 +3,7 @@ import { useFormik } from 'formik'
 import { registerSchema } from '../schemas';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Register.css';
+import { motion } from 'framer-motion';
 
 
 function Register() {
@@ -27,7 +28,7 @@ function Register() {
             }
         });
   return (
-    <form onSubmit={handleSubmit} className='register-mainForm'>
+    <motion.form onSubmit={handleSubmit} className='register-mainForm' initial={{opacity: 0.7}}  animate={{opacity: 1}} transition={{duration: 0.75}} exit={{opacity: 0}}>
         <div className='register-div'>
             <label className='register-label'>Username</label>
             <input type='text' value={values.username} onChange={handleChange} id='username' placeholder='Please enter your username' className={errors.username ? ' register-input input-error' : 'register-input'}/>
@@ -50,7 +51,7 @@ function Register() {
         </div>
         <button className='register-button' type='submit'>Register</button>
         <Link to='/login' className='register-link'>Back to the login page</Link>
-    </form>
+    </motion.form>
   )
 }
 

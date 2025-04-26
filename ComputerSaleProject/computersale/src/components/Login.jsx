@@ -3,6 +3,7 @@ import React from 'react'
 import { loginSchema } from '../schemas';
 import '../styles/Login.css'
 import { Link, useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 function Login({setLoggedIn}) {
 
@@ -31,7 +32,7 @@ function Login({setLoggedIn}) {
 
     const loginValues = [values.username, values.password]
   return (
-    <form onSubmit={handleSubmit} className='mainForm'>
+    <motion.form onSubmit={handleSubmit} className='mainForm' initial={{opacity: 0.7}}  animate={{opacity: 1}} transition={{duration: 0.75}} exit={{opacity: 0}}>
         <div className='form-div'>
             <label className='form-label'>Username</label>
             <input type='text' value={values.username} onChange={handleChange} id='username' placeholder='Please enter your username' className={errors.username ? ' form-input input-error' : 'form-input'}/>
@@ -44,7 +45,7 @@ function Login({setLoggedIn}) {
         </div>
         <button className='login-button' type='submit'>Log In</button>
         <Link to='/register' className='register-link'>Create a new account</Link>
-    </form>
+    </motion.form>
   )
 }
 

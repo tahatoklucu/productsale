@@ -1,10 +1,11 @@
 import React from 'react'
 import BannerImage from '../assets/contactBanner.png';
 import '../styles/ContactUs.css';
+import { motion } from 'framer-motion';
 
 function ContactUs() {
   return (
-    <div className='contact'>
+    <motion.div className='contact' initial={{opacity: 0.7}}  animate={{opacity: 1}} transition={{duration: 0.75}} exit={{opacity: 0}}>
       <div className='left-side' style={{backgroundImage: `url(${BannerImage})`}}></div>
       <div className='right-side'>
         <h1 className='contact-header'>Contact Us</h1>
@@ -18,7 +19,7 @@ function ContactUs() {
           <button className='contact-button'>Submit</button>
         </form>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
