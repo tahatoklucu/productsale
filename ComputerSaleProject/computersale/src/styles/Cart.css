@@ -42,3 +42,10 @@
     padding: 4px;
     margin: 15px;
 }
+
+.total-price {
+    color: #dee0ea;
+    padding: 20px;
+    display: flex;
+    justify-content: right;
+}

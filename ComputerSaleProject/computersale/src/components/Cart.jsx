@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Table from 'react-bootstrap/Table';
 import '../styles/Cart.css';
+import { Alert } from 'react-bootstrap';
+import { motion } from 'framer-motion';
 
 function Cart() {
     const [cartProducts, setCartProducts] = useState([]);
@@ -39,10 +41,20 @@ function Cart() {
     );
 
   return (
-    <div className='cart-container'>
+    <motion.div className='cart-container'>
         <div className='cart-title'>My Cart</div>
         {loading ? (
-            <p>Loading...</p>
+            <div className='loading-container'>
+                <span className='loading-span'>
+                    {[
+                    'light',
+                    ].map((variant) => (
+                    <Alert key={variant} variant={variant}>
+                        Loading...
+                    </Alert>
+                    ))}
+                </span>
+            </div>
         ) : (        
         <div className='cart-table'>
             <Table className='table'>
@@ -79,9 +91,12 @@ function Cart() {
                     ))}
                 </tbody>
             </Table>
+            <div className='total-price'>
+                <strong>Total: ${totalPrice.toFixed(2)}</strong>
+            </div>
         </div>
         )}
-    </div>
+    </motion.div>
   )
 }
 
