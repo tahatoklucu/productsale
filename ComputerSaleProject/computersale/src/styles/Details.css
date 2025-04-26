@@ -69,6 +69,11 @@
     padding: 200px;
 }
 
+.mycart {
+    margin-left: 10px;
+    width: 105px;
+}
+
 @media (max-width: 768px) {
     .details-title {
         font-size: 30px;

@@ -57,8 +57,9 @@ function Details() {
           <p className='details-price'>{product.price} $</p>
           <div className='details-bottom'>
             <button className='btn btn-warning'>Add to cart</button>
-            <Link to="/" className='btn btn-danger'>Back to the main page</Link>
+            <Link to="/mycart" className='btn btn-info mycart'>My Cart</Link>
           </div>
+          <Link to="/" className='btn btn-danger'>Back to the main page</Link>
         </div>
       </div>
     </motion.div>

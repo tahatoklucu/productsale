@@ -18,7 +18,7 @@
 
 .btn-warning {
     background-color: #dee0ea;
-    border: none;
+    border-color: #dee0ea;
     margin-right: 10px;
 }
 
@@ -28,7 +28,7 @@
 
 .btn-info {
     background-color: #f1a10d;
-    border: none;
+    border-color: #f1a10d;
 }
 
 .btn-info:hover {
@@ -36,5 +36,6 @@
 }
 
 .btn-danger {
-    margin-left: 20px;
+    margin-top: 20px;
+    width: 232px;
 }
