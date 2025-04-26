@@ -54,7 +54,7 @@
 
 .computerItem .buttons {
     display: block;
-    width: 100%;
+    width: 200px;
     text-align: left;
     margin-left: 50px;
 }
@@ -113,9 +113,6 @@
     }
     .computerItem p {
         font-size: 16px;
-    }
-    .computerItem .buttons {
-        width: 200px;
     }
     .btn-secondary {
         font-size: 10px;
