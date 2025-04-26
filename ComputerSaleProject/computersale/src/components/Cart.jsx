@@ -74,7 +74,7 @@ function Cart() {
     );
 
   return (
-    <motion.div className='cart-container'>
+    <motion.div className='cart-container' initial={{opacity: 0.7}} animate={{opacity: 1}} transition={{duration: 0.75}} exit={{opacity: 0}}>
         <div className='cart-title'>My Cart</div>
         {loading ? (
             <div className='loading-container'>
