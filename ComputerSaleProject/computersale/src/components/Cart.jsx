@@ -48,7 +48,7 @@ function Cart() {
     const handleDecrease = (productId) => {
         const updatedProducts = cartProducts.map(product => 
             product.id === productId
-                ? {...product, quantity: Math.max(product.quantity -1)}
+                ? {...product, quantity: Math.max(1, product.quantity -1)}
                 : product
         );
         setCartProducts(updatedProducts);
@@ -115,12 +115,12 @@ function Cart() {
                             <td style={{width: '300px'}}>{product.title}</td>
                             <td style={{width: '500px',fontSize: '14px' }}>{product.description}</td>
                             <td style={{color: 'rgba(170, 240, 100, 0.974)'}}>${product.price}</td>
-                            <td>
+                            <td style={{width: '200px'}}>
                                 <button className='btn btn-primary button-adj' onClick={() => handleDecrease(product.id)}>-</button>
                                 {product.quantity}
                                 <button className='btn btn-primary button-adj' onClick={() => handleIncrease(product.id)}>+</button>
                             </td>
-                            <td>${(product.price * product.quantity).toFixed(2)}</td>
+                            <td style={{width: '100px'}}>${(product.price * product.quantity).toFixed(2)}</td>
                         </tr>
                     ))}
                 </tbody>
