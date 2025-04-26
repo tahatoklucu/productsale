@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 import { Alert } from 'react-bootstrap';
 
 function Details() {
-  const { id } = useParams(); // URL'den ID'yi al
+  const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
