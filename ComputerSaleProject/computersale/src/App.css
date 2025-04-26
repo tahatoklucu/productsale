@@ -29,6 +29,12 @@
 .btn-info {
     background-color: #f1a10d;
     border-color: #f1a10d;
+    --bs-btn-border-color: #f1a10d;
+    --bs-btn-hover-bg: rgba(255, 222, 173, 0.867);
+    --bs-btn-hover-border-color: rgba(255, 222, 173, 0.867);
+    --bs-btn-active-bg: #f1a10d;
+    --bs-btn-disabled-bg: #f1a10d;
+    --bs-btn-disabled-border-color: #f1a10d;
 }
 
 .btn-info:hover {
