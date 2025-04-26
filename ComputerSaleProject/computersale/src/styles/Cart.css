@@ -6,7 +6,6 @@
     width: 100%;
     height: auto;
     background-color: #041e2f;
-    
 }
 
 .cart-container .cart-title {
@@ -48,4 +47,8 @@
     padding: 20px;
     display: flex;
     justify-content: right;
+}
+
+.product-delete-btn {
+    position: absolute;
 }

@@ -35,6 +35,39 @@ function Cart() {
         fetchProducts();
     }, []);
 
+    const handleIncrease = (productId) => {
+        const updatedProducts = cartProducts.map(product =>
+            product.id === productId
+                ? {...product, quantity: product.quantity + 1}
+                : product
+        );
+        setCartProducts(updatedProducts);
+        updateLocalStorage(updatedProducts);
+    }
+
+    const handleDecrease = (productId) => {
+        const updatedProducts = cartProducts.map(product => 
+            product.id === productId
+                ? {...product, quantity: Math.max(product.quantity -1)}
+                : product
+        );
+        setCartProducts(updatedProducts);
+        updateLocalStorage(updatedProducts);
+    }
+
+    const handleDelete = (productId) => {
+        const updatedProducts = cartProducts.filter(product => product.id !== productId);
+        setCartProducts(updatedProducts);
+
+        const updatedCart = JSON.parse(localStorage.getItem("cart")).filter(item => item.id !== productId);
+        localStorage.setItem("cart", JSON.stringify(updatedCart));
+    }
+
+    const updateLocalStorage = (products) => {
+        const simplifiedCart =  products.map(({id, quantity}) => ({id, quantity}));
+        localStorage.setItem("cart", JSON.stringify(simplifiedCart));
+    }
+
     const totalPrice = cartProducts.reduce(
         (sum, product) => sum + (product.price * product.quantity), 
         0
@@ -72,19 +105,20 @@ function Cart() {
                     {cartProducts.map((product) => (
                         <tr key={product.id}>
                             <td>
+                                <button className='btn btn-light product-delete-btn' onClick={() => handleDelete(product.id)}>X</button>
                                 <img 
                                     src={product.images[0]} 
                                     alt={product.title} 
-                                    style={{ width: '200px' }}
+                                    style={{ width: '200px', borderRadius: '10px' }}
                                 />
                             </td>
                             <td style={{width: '300px'}}>{product.title}</td>
                             <td style={{width: '500px',fontSize: '14px' }}>{product.description}</td>
                             <td style={{color: 'rgba(170, 240, 100, 0.974)'}}>${product.price}</td>
                             <td>
-                                <button className='btn btn-primary button-adj'>-</button>
+                                <button className='btn btn-primary button-adj' onClick={() => handleDecrease(product.id)}>-</button>
                                 {product.quantity}
-                                <button className='btn btn-primary button-adj'>+</button>
+                                <button className='btn btn-primary button-adj' onClick={() => handleIncrease(product.id)}>+</button>
                             </td>
                             <td>${(product.price * product.quantity).toFixed(2)}</td>
                         </tr>
