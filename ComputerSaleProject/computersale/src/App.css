@@ -45,3 +45,14 @@
     margin-top: 20px;
     width: 232px;
 }
+
+.logOut {
+    color: #000;
+    background-color: #fc8181;
+    margin-left: 20px;
+}
+
+.logOut:hover {
+    color: #000;
+    background-color: #f1a10d;
+}
