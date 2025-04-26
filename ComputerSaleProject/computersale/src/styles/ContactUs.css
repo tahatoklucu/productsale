@@ -92,3 +92,12 @@ textarea:focus {
         display: none;
     }
 }
+
+@media (max-width: 500px) {
+    .contact-form .contact-input {
+        width: 100%;
+    }
+    .contact-form textarea {
+        width: 100%;
+    }
+}

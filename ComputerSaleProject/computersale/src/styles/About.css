@@ -59,6 +59,9 @@
 
 @media (max-width: 500px) {
     .aboutBottom p {
-        width: 270px;
+        width: 300px;
+        font-size: 10px;
+        margin-bottom: 30px;
+        text-align: justify;
     }
 }
