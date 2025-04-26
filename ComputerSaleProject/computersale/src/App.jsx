@@ -10,14 +10,16 @@ import Register from './components/Register';
 import Details from './components/Details';
 import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import Cart from './components/Cart';
 
 function App() {
 
   const [basketCount, setBasketCount] = useState(0);
   const [loggedIn, setLoggedIn] = useState(false);
+
   return (
     <div className='mainHome'>
-      <AnimatePresence mode='wait'>
+      <AnimatePresence>
       <Navbar basketCount={basketCount} loggedIn={loggedIn} />
       <Routes>
         <Route path='/' exact element={<Shops setBasketCount={setBasketCount} />}  />
@@ -26,6 +28,7 @@ function App() {
         <Route path='/login' exact element={<Login setLoggedIn={setLoggedIn} />} />
         <Route path='/register' exact element={<Register />} />
         <Route path='/products/:id' exact element={<Details />} />
+        <Route path='/mycart' exact element={<Cart />} />
       </Routes>
       <Footer />
       </AnimatePresence>
