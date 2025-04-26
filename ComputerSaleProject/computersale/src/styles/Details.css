@@ -126,5 +126,11 @@
     .btn-danger {
         margin: 0;
         margin-right: 10px;
+        margin-top: 20px;
+        width: 82.5%;
+    }
+    .mycart {
+        width: 97%;
+        margin-left: 0;
     }
 }
