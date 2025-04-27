@@ -9,6 +9,7 @@ function Cart() {
     const [cartProducts, setCartProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [showAlert, setShowAlert] = useState(false);
+    const [showDelete, setShowDelete] = useState(false);
 
     useEffect(() => {
         const storedData = localStorage.getItem("cart");
@@ -72,6 +73,24 @@ function Cart() {
             if(alertElement) {
                 alertElement.classList.add('hiding');
                 setTimeout(() => setShowAlert(false), 500);
+            }
+        }, 3000);
+    }
+
+    const handleClearCart = () => {
+
+        setCartProducts([]);
+
+        localStorage.removeItem("cart");
+
+        window.dispatchEvent(new CustomEvent('basketUpdated'));
+
+        setShowDelete(true);
+        setTimeout(() => {
+            const alertElement = document.querySelector('.fade-alert');
+            if(alertElement) {
+                alertElement.classList.add('hiding');
+                setTimeout(() => setShowDelete(false), 500);
             }
         }, 3000);
     }
@@ -156,8 +175,31 @@ function Cart() {
                     ))}
                 </tbody>
             </Table>
-            <div className='total-price'>
-                <strong>Total: ${totalPrice.toFixed(2)}</strong>
+            <div className='bottom'>
+                <div className='delete-div'>
+                    <button className='btn btn-light delete-all-btn' onClick={handleClearCart}>Delete All Products</button>
+                    {showDelete && (
+                        <Alert 
+                            variant="danger" 
+                            onClose={() => setShowAlert(false)} 
+                            dismissible
+                            className={showDelete ? "fade-alert" : "fade-alert hiding"}
+                            style={{
+                                position: 'fixed',
+                                top: '20px',
+                                right: '20px',
+                                zIndex: 9999,
+                                width: 'auto',
+                                minWidth: '200px'
+                            }}
+                            >
+                            All product has been removed from your cart.
+                        </Alert>
+                    )}
+                </div>
+                <div className='total-price'>   
+                    <strong>Total: ${totalPrice.toFixed(2)}</strong>
+                </div>
             </div>
         </div>
         )}

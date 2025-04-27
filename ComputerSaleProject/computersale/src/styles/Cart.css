@@ -70,9 +70,11 @@
 
 .total-price {
     color: #dee0ea;
-    padding: 20px;
+    margin-top: 10px;
+    margin-right: 10px;
     display: flex;
     justify-content: right;
+    width: 30%;
 }
 
 .product-delete-btn {
@@ -86,6 +88,19 @@
 
 .fade-alert.hiding {
     opacity: 0;
+}
+
+.bottom {
+    display: flex;
+}
+
+.delete-div {
+    width: 100%;
+}
+
+.delete-all-btn {
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 @media (max-width: 768px) {
