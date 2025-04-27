@@ -78,7 +78,7 @@ function Cart() {
     }
 
     const handleClearCart = () => {
-
+        
         setCartProducts([]);
 
         localStorage.removeItem("cart");
@@ -126,7 +126,26 @@ function Cart() {
                 <button className='btn btn-success empty-button' onClick={() => window.location.href = "/"}>
                     Continue Shopping
                 </button>
+                {showDelete && (
+                    <Alert 
+                        variant="danger" 
+                        onClose={() => setShowDelete(false)} 
+                        dismissible
+                        className={showDelete ? "fade-alert" : "fade-alert hiding"}
+                        style={{
+                            position: 'fixed',
+                            top: '20px',
+                            right: '20px',
+                            zIndex: 9999,
+                            width: 'auto',
+                            minWidth: '200px'
+                        }}
+                    >
+                        All product has been removed from your cart.
+                    </Alert>
+                )}
             </div>
+            
         ) : (        
         <div className='cart-table'>
             <Table className='table' responsive='sm'>
@@ -185,24 +204,6 @@ function Cart() {
             <div className='bottom'>
                 <div className='delete-div'>
                     <button className='btn btn-light delete-all-btn' onClick={handleClearCart}>Delete All Products</button>
-                    {showDelete && (
-                        <Alert 
-                            variant="danger" 
-                            onClose={() => setShowAlert(false)} 
-                            dismissible
-                            className={showDelete ? "fade-alert" : "fade-alert hiding"}
-                            style={{
-                                position: 'fixed',
-                                top: '20px',
-                                right: '20px',
-                                zIndex: 9999,
-                                width: 'auto',
-                                minWidth: '200px'
-                            }}
-                            >
-                            All product has been removed from your cart.
-                        </Alert>
-                    )}
                 </div>
                 <div className='total-price'>   
                     <strong>Total: ${totalPrice.toFixed(2)}</strong>
