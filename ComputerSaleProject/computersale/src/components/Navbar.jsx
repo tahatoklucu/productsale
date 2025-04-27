@@ -41,7 +41,7 @@ function Navbar({loggedIn}) {
                 <NavLink className="navbar-item" to="/about">About Us</NavLink>
                 <NavLink className="navbar-item" to="/contact">Contact</NavLink>
             </div>
-            {basketCount > 0 && (
+            {basketCount > -1 && (
                 <span className='basketCount'>{basketCount}</span>
             )}
             <Link to="/mycart" className='shopIcon'> 
