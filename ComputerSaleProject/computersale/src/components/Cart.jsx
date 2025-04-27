@@ -128,7 +128,7 @@ function Cart() {
                 </button>
                 {showDelete && (
                     <Alert 
-                        variant="danger" 
+                        variant="light" 
                         onClose={() => setShowDelete(false)} 
                         dismissible
                         className={showDelete ? "fade-alert" : "fade-alert hiding"}
