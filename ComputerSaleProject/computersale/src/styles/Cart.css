@@ -70,7 +70,7 @@
 
 .total-price {
     color: #dee0ea;
-    margin-top: 10px;
+    margin-top: 34.5px;
     margin-right: 10px;
     display: flex;
     justify-content: right;
@@ -100,7 +100,7 @@
 }
 
 .delete-all-btn {
-    margin-top: 10px;
+    margin-top: 30px;
     margin-left: 10px;
 }
 
@@ -123,12 +123,13 @@
 
 @media (max-width: 768px) {
     .cart-container .cart-title {
-        font-size: 40px;
+        font-size: 55px;
     }
     .cart-table {
         margin: 0;
         margin-left: 10px;
         margin-right: 10px;
+        margin-top: 50px;
     }
     .product-img {
         width: 75px;
@@ -168,5 +169,11 @@
     }
     .total-price {
         font-size: 12px;
+    }
+    .delete-all-btn {
+        font-size: 12px;
+    }
+    .bottom {
+        height: 30vh;
     }
 }
