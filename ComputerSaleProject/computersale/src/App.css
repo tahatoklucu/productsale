@@ -35,6 +35,7 @@
     --bs-btn-active-bg: #f1a10d;
     --bs-btn-disabled-bg: #f1a10d;
     --bs-btn-disabled-border-color: #f1a10d;
+    --bs-btn-active-border-color: #f1a10d;
 }
 
 .btn-info:hover {
