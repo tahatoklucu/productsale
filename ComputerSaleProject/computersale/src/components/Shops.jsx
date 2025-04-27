@@ -81,7 +81,6 @@ function Shops({setBasketCount}) {
                             desc={item.description}
                             image={item.images}
                             category={item.category}
-                            onAddToCart={() => setBasketCount(prev => prev + 1)}
                         />
                     ))}
                 </div>

@@ -49,6 +49,11 @@
     width: 70%;
 }
 
+.shopIcon {
+    color: #000;
+    text-decoration: none;
+}
+
 .main .shopIcon svg{
     font-size: 24px;
     margin-right: 20px;

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import productLogo from '../assets/productLogo.png';
 import '../styles/Navbar.css';
@@ -6,10 +6,28 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import PersonIcon from '@mui/icons-material/Person';
 
 
-function Navbar({basketCount, loggedIn}) {
+function Navbar({loggedIn}) {
   
+  const [basketCount, setBasketCount] = useState(0);
+
+  useEffect(() => {
+    const updateBasketCount = () => {
+      const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+      const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+      setBasketCount(totalQuantity);
+    };
+
+    updateBasketCount();
+
+    window.addEventListener("basketUpdated", updateBasketCount);
+
+    return () => {
+      window.removeEventListener("basketUpdated", updateBasketCount);
+    }
+  }, []);
+
   const logOut = () => {  
-    JSON.parse(localStorage.setItem("loggedIn", false));
+    localStorage.setItem("loggedIn", false);
     loggedIn = false;
   }
 
@@ -23,7 +41,9 @@ function Navbar({basketCount, loggedIn}) {
                 <NavLink className="navbar-item" to="/about">About Us</NavLink>
                 <NavLink className="navbar-item" to="/contact">Contact</NavLink>
             </div>
-            <span className='basketCount'>{basketCount}</span>
+            {basketCount > 0 && (
+                <span className='basketCount'>{basketCount}</span>
+            )}
             <Link to="/mycart" className='shopIcon'> 
               <ShoppingBasketIcon />
             </Link>

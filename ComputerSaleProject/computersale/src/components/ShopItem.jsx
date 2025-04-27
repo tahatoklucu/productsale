@@ -26,6 +26,7 @@ function ShopItem({id, image, title, desc, price, onAddToCart}) {
       cartItems.push({id, quantity: 1});
     }
     localStorage.setItem("cart", JSON.stringify(cartItems));
+    window.dispatchEvent(new CustomEvent('basketUpdated'));
     setShowAlert(true);
 
     setTimeout(() => {

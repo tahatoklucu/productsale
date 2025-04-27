@@ -44,6 +44,7 @@ function Cart() {
         );
         setCartProducts(updatedProducts);
         updateLocalStorage(updatedProducts);
+        window.dispatchEvent(new CustomEvent('basketUpdated'));
     }
 
     const handleDecrease = (productId) => {
@@ -54,6 +55,7 @@ function Cart() {
         );
         setCartProducts(updatedProducts);
         updateLocalStorage(updatedProducts);
+        window.dispatchEvent(new CustomEvent('basketUpdated'));
     }
 
     const handleDelete = (productId) => {
@@ -62,6 +64,7 @@ function Cart() {
 
         const updatedCart = JSON.parse(localStorage.getItem("cart")).filter(item => item.id !== productId);
         localStorage.setItem("cart", JSON.stringify(updatedCart));
+        window.dispatchEvent(new CustomEvent('basketUpdated'));
         setShowAlert(true);
 
         setTimeout(() => {
