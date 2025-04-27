@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Alert } from 'react-bootstrap';
 
-
 function ShopItem({id, image, title, desc, price, onAddToCart}) {
   const navigate = useNavigate();
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleClick = async () => {
     try {
@@ -26,6 +26,15 @@ function ShopItem({id, image, title, desc, price, onAddToCart}) {
       cartItems.push({id, quantity: 1});
     }
     localStorage.setItem("cart", JSON.stringify(cartItems));
+    setShowAlert(true);
+
+    setTimeout(() => {
+      const alertElement = document.querySelector('.fade-alert');
+      if(alertElement) {
+        alertElement.classList.add('hiding');
+        setTimeout(() => setShowAlert(false), 500);
+      }
+    }, 3000)
   }
 
   return (
@@ -36,6 +45,26 @@ function ShopItem({id, image, title, desc, price, onAddToCart}) {
         <div className='buttons'>
           <button className='btn btn-warning' onClick={handleSubmit}>Add to cart</button>
           <button className='btn btn-info' onClick={handleClick}>Details</button>
+
+          {showAlert && (
+                <Alert 
+                    variant="success" 
+                    onClose={() => setShowAlert(false)} 
+                    dismissible
+                    className={showAlert ? "fade-alert" : "fade-alert hiding"}
+                    style={{
+                        position: 'fixed',
+                        top: '20px',
+                        right: '20px',
+                        zIndex: 9999,
+                        width: 'auto',
+                        minWidth: '200px'
+                    }}
+                >
+                    Product added to cart!
+                </Alert>
+            )}
+
         </div>
     </div>
   )

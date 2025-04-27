@@ -10,6 +10,7 @@ function Details() {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -34,6 +35,15 @@ function Details() {
       cartItems.push({id, quantity: 1});
     }
     localStorage.setItem("cart", JSON.stringify(cartItems));
+    setShowAlert(true);
+
+    setTimeout(() => {
+      const alertElement = document.querySelector('.fade-alert');
+      if(alertElement) {
+        alertElement.classList.add('hiding');
+        setTimeout(() => setShowAlert(false), 500);
+      }
+    }, 3000)
   }
 
   if (loading) return (
@@ -68,6 +78,24 @@ function Details() {
           <p className='details-price'>{product.price} $</p>
           <div className='details-bottom'>
             <button className='btn btn-warning' onClick={handleSubmit}>Add to cart</button>
+            {showAlert && (
+                <Alert 
+                    variant="success" 
+                    onClose={() => setShowAlert(false)} 
+                    dismissible
+                    className={showAlert ? "fade-alert" : "fade-alert hiding"}
+                    style={{
+                        position: 'fixed',
+                        top: '20px',
+                        right: '20px',
+                        zIndex: 9999,
+                        width: 'auto',
+                        minWidth: '200px'
+                    }}
+                  >
+                    Product added to cart!
+                  </Alert>
+              )}
             <Link to="/mycart" className='btn btn-info mycart'>My Cart</Link>
           </div>
           <Link to="/" className='btn btn-danger'>Back to the main page</Link>
