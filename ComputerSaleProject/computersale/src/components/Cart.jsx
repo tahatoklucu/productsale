@@ -120,6 +120,13 @@ function Cart() {
                     ))}
                 </span>
             </div>
+        ) : cartProducts.length === 0 ? (
+            <div className='empty-cart'>
+                <h1 className='empty-message'>Your cart is currently empty.</h1>
+                <button className='btn btn-success empty-button' onClick={() => window.location.href = "/"}>
+                    Continue Shopping
+                </button>
+            </div>
         ) : (        
         <div className='cart-table'>
             <Table className='table' responsive='sm'>

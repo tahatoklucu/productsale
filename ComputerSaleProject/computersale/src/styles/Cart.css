@@ -92,6 +92,7 @@
 
 .bottom {
     display: flex;
+    height: 24.4vh;
 }
 
 .delete-div {
@@ -101,6 +102,23 @@
 .delete-all-btn {
     margin-top: 10px;
     margin-left: 10px;
+}
+
+.empty-cart {
+    height: 35.4vh;
+    text-align: center;
+}
+
+.empty-message {
+    text-align: center;
+    color: #dee0ea;
+    margin-top: 150px;
+}
+
+.empty-button {
+    padding: 10px;
+    width: 300px;
+    margin-top: 40px;
 }
 
 @media (max-width: 768px) {
