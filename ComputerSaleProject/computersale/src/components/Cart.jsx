@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 function Cart() {
     const [cartProducts, setCartProducts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [showAlert, setShowAlert] = useState(false);
 
     useEffect(() => {
         const storedData = localStorage.getItem("cart");
@@ -61,6 +62,15 @@ function Cart() {
 
         const updatedCart = JSON.parse(localStorage.getItem("cart")).filter(item => item.id !== productId);
         localStorage.setItem("cart", JSON.stringify(updatedCart));
+        setShowAlert(true);
+
+        setTimeout(() => {
+        const alertElement = document.querySelector('.fade-alert');
+            if(alertElement) {
+                alertElement.classList.add('hiding');
+                setTimeout(() => setShowAlert(false), 500);
+            }
+        }, 3000);
     }
 
     const updateLocalStorage = (products) => {
@@ -106,6 +116,24 @@ function Cart() {
                         <tr key={product.id}>
                             <td className='button-main'>
                                 <button className='btn btn-light product-delete-btn' onClick={() => handleDelete(product.id)}>X</button>
+                                {showAlert && (
+                                    <Alert 
+                                        variant="danger" 
+                                        onClose={() => setShowAlert(false)} 
+                                        dismissible
+                                        className={showAlert ? "fade-alert" : "fade-alert hiding"}
+                                        style={{
+                                            position: 'fixed',
+                                            top: '20px',
+                                            right: '20px',
+                                            zIndex: 9999,
+                                            width: 'auto',
+                                            minWidth: '200px'
+                                        }}
+                                        >
+                                        The product has been removed from your cart.
+                                    </Alert>
+                                )}
                                 <img 
                                     className='product-img'
                                     src={product.images[0]} 

@@ -79,6 +79,15 @@
     position: absolute;
 }
 
+.fade-alert {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-alert.hiding {
+    opacity: 0;
+}
+
 @media (max-width: 768px) {
     .cart-container .cart-title {
         font-size: 40px;
