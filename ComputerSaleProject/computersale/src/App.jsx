@@ -20,7 +20,7 @@ function App() {
   return (
     <div className='mainHome'>
       <AnimatePresence>
-      <Navbar basketCount={basketCount} loggedIn={loggedIn} />
+      <Navbar basketCount={basketCount} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
       <Routes>
         <Route path='/' exact element={<Shops setBasketCount={setBasketCount} />}  />
         <Route path='/about' exact element={<About />} />

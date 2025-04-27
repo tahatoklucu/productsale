@@ -2,9 +2,10 @@ import * as yup from 'yup';
 const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/;
 
 export const loginSchema = yup.object().shape({
-    username: yup
+    email: yup
         .string()
-        .required('You need to enter your username.'),
+        .email('Enter a valid email')
+        .required('You need to enter your email.'),
     password: yup
         .string()
         .required('You need to enter your password.')

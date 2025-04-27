@@ -10,7 +10,7 @@ function Register() {
 
     const navigate = useNavigate();
 
-    const {values, errors, isSubmitting, handleChange, handleSubmit} = useFormik({
+    const {values, errors, handleChange, handleSubmit} = useFormik({
             initialValues: {
                 username: '',
                 email: '',
@@ -19,13 +19,25 @@ function Register() {
                 isAccepted: '',
             },
             validationSchema: registerSchema,
-            onSubmit: () => {
-                localStorage.setItem("username", values.username);
-                localStorage.setItem("email", values.email);
-                localStorage.setItem("password", values.password);
-                alert("Your registration was completed successfully.");
-                navigate("/login")
-            }
+            onSubmit: (values) => {
+                const users = JSON.parse(localStorage.getItem('users')) || [];
+
+                if(users.some(user => user.email === values.email)) {
+                    alert('This email already registered!');
+                    return;
+                }
+
+                users.push({
+                    id: Date.now(),
+                    username: values.username,
+                    email: values.email,
+                    password: values.password
+                });
+
+                localStorage.setItem('users', JSON.stringify(users));
+                alert('Registiration successful!');
+                navigate('/login');
+            },
         });
   return (
     <motion.form onSubmit={handleSubmit} className='register-mainForm' initial={{opacity: 0.7}}  animate={{opacity: 1}} transition={{duration: 0.75}} exit={{opacity: 0}}>

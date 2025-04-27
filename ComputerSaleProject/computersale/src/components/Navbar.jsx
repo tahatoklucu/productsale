@@ -6,9 +6,10 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import PersonIcon from '@mui/icons-material/Person';
 
 
-function Navbar({loggedIn}) {
+function Navbar({loggedIn, setLoggedIn}) {
   
   const [basketCount, setBasketCount] = useState(0);
+  const [username, setUsername] = useState('');
 
   useEffect(() => {
     const updateBasketCount = () => {
@@ -17,18 +18,24 @@ function Navbar({loggedIn}) {
       setBasketCount(totalQuantity);
     };
 
-    updateBasketCount();
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (currentUser) {
+      setUsername(currentUser.username);
+      setLoggedIn(true);
+    }
 
+    updateBasketCount();
     window.addEventListener("basketUpdated", updateBasketCount);
 
     return () => {
       window.removeEventListener("basketUpdated", updateBasketCount);
     }
-  }, []);
+  }, [setLoggedIn]);
 
   const logOut = () => {  
-    localStorage.setItem("loggedIn", false);
-    loggedIn = false;
+    localStorage.removeItem('currentUser');
+    setLoggedIn(false);
+    setUsername('');
   }
 
   return (
@@ -47,13 +54,13 @@ function Navbar({loggedIn}) {
             <Link to="/mycart" className='shopIcon'> 
               <ShoppingBasketIcon />
             </Link>
-            {JSON.parse(localStorage.getItem("loggedIn")) ? 
+            {loggedIn ? 
              <>
               <div className='loggedIn'>
                 <Link to="/user-details">
                   <PersonIcon style={{color: "rgba(255, 222, 173, 0.867)", fontSize: "24px"}} /> 
                 </Link>
-                <span className='loggedIn-person'>{localStorage.getItem("username")}</span>
+                <span className='loggedIn-person'>{username}</span>
               </div>
               <Link to="/login" onClick={logOut} className='btn logOut'>Log Out</Link>
               </>

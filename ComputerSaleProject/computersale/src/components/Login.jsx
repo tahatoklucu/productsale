@@ -9,34 +9,43 @@ function Login({setLoggedIn}) {
 
     const navigate = useNavigate();
 
-    const {values, errors, isSubmitting, handleChange, handleSubmit} = useFormik({
+    const {values, errors, handleChange, handleSubmit} = useFormik({
         initialValues: {
-            username: '',
+            email: '',
             password: '',
         },
         validationSchema: loginSchema,
-        onSubmit: () => {
-            const username = localStorage.getItem("username");
-            const email = localStorage.getItem("email");
-            const password = localStorage.getItem("password");
-            if(values.username == username && values.password == password) {
-                navigate("/");
-                alert("You're logged in!");
-                setLoggedIn(
-                    true,
-                    localStorage.setItem("loggedIn", true)
-                );
+        onSubmit: (values) => {
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const user = users.find(user => user.email === values.email);
+
+            if(!user) {
+                alert('Invalid email or password!');
+                return;
             }
-        }
+
+            if(user.password !== values.password) {
+                alert('Incorrect password!');
+                return;
+            }
+
+            localStorage.setItem('currentUser', JSON.stringify({
+                id: user.id,
+                username: user.username,
+                email: user.email,
+            }));
+            setLoggedIn(true);
+            navigate('/');
+        },
     });
 
     const loginValues = [values.username, values.password]
   return (
     <motion.form onSubmit={handleSubmit} className='mainForm' initial={{opacity: 0.7}}  animate={{opacity: 1}} transition={{duration: 0.75}} exit={{opacity: 0}}>
         <div className='form-div'>
-            <label className='form-label'>Username</label>
-            <input type='text' value={values.username} onChange={handleChange} id='username' placeholder='Please enter your username' className={errors.username ? ' form-input input-error' : 'form-input'}/>
-            {errors.username && <p className='error'>{errors.username}</p>}
+            <label className='form-label'>Email</label>
+            <input type='email' value={values.email} onChange={handleChange} id='email' placeholder='Please enter your email' className={errors.email ? ' form-input input-error' : 'form-input'}/>
+            {errors.email && <p className='error'>{errors.email}</p>}
         </div>
         <div className='form-div'>
             <label className='form-label'>Password</label>
