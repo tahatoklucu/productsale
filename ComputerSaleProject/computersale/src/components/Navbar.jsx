@@ -30,7 +30,7 @@ function Navbar({loggedIn, setLoggedIn}) {
     return () => {
       window.removeEventListener("basketUpdated", updateBasketCount);
     }
-  }, [setLoggedIn]);
+  }, [loggedIn]);
 
   const logOut = () => {  
     localStorage.removeItem('currentUser');
