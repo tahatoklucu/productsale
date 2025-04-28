@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import productLogo from '../assets/productLogo.png';
 import '../styles/Navbar.css';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import PersonIcon from '@mui/icons-material/Person';
 import Dropdown from 'react-bootstrap/Dropdown';
-
+import { Alert } from 'react-bootstrap';
 
 function Navbar({loggedIn, setLoggedIn}) {
   
   const [basketCount, setBasketCount] = useState(0);
   const [username, setUsername] = useState('');
+  const [showAlert, setShowAlert] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const updateBasketCount = () => {
@@ -37,6 +39,17 @@ function Navbar({loggedIn, setLoggedIn}) {
     localStorage.removeItem('currentUser');
     setLoggedIn(false);
     setUsername('');
+    setShowAlert(true);
+    setTimeout(() => {
+      const alertElement = document.querySelector('.fade-alert');
+      if(alertElement) {
+        alertElement.classList.add('hiding');
+        setTimeout(() => setShowAlert(false), 500);
+      }
+    }, 3000)
+    setTimeout(() => {
+      navigate('/login');
+    }, 3000)
   }
 
   return (
@@ -57,7 +70,6 @@ function Navbar({loggedIn, setLoggedIn}) {
             </Link>
             {loggedIn ? 
              <>
-              
               <Dropdown className='dropdown'>
                 <Dropdown.Toggle variant="light" id="dropdown-basic">
                       <PersonIcon style={{color: "#000", fontSize: "24px"}} /> 
@@ -67,12 +79,33 @@ function Navbar({loggedIn, setLoggedIn}) {
                   <hr style={{marginTop: "2px", marginBottom: "2px"}} />
                   <Dropdown.Item href="/user-details">User Details</Dropdown.Item>
                   <Dropdown.Item href="/user-settings">Settings</Dropdown.Item>
-                  <Dropdown.Item onClick={logOut} href="/login">LogOut</Dropdown.Item>
+                  <Dropdown.Item onClick={logOut} >LogOut</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
               </>
               : 
-              <Link className='btn btn-secondary btn-login' to="/login">Login</Link>}
+              <>
+                <Link className='btn btn-secondary btn-login' to="/login">Login</Link>
+                {showAlert && (
+                  <Alert 
+                      variant="success" 
+                      onClose={() => setShowAlert(false)} 
+                      dismissible
+                      className={showAlert ? "fade-alert" : "fade-alert hiding"}
+                      style={{
+                          position: 'fixed',
+                          top: '20px',
+                          right: '20px',
+                          zIndex: 9999,
+                          width: 'auto',
+                          minWidth: '200px'
+                      }}
+                  >
+                      You made a successful exit.
+                </Alert>
+              )}
+              </>
+            }
         </div>
     </div>
   )
