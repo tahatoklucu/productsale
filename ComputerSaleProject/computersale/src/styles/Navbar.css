@@ -108,19 +108,28 @@
 .loggedIn-person {
     color: rgba(255, 222, 173, 0.867);
     font-size: 14px;
+    text-transform: uppercase;
+}
+
+.dropdown {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.dropdown-menu.show a:hover {
+    color: #000;
 }
 
 @media (max-width: 500px) {
     .navbar .main img{
-        height: 30px;
+        height: 60px;
         margin-left: 10px;
     }
     .navbar .LinkMain {
         width: 100%;
     }
     .navbar .computerText {
-        font-size: 10px;
-        padding-bottom: 0;
+        display: none;
     }
     .navbar .navbar-item {
         font-size: 12px;
@@ -143,4 +152,14 @@
         bottom: 5px;
         font-size: 8px;
     }
+    .dropdown button {
+        font-size: 10px;
+        margin-right: 10px;
+        padding: 2px;
+        width: 100%;
+    }
+    .loggedIn-person {
+        font-size: 10px;
+    }
+    
 }

@@ -4,6 +4,7 @@ import productLogo from '../assets/productLogo.png';
 import '../styles/Navbar.css';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import PersonIcon from '@mui/icons-material/Person';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 
 function Navbar({loggedIn, setLoggedIn}) {
@@ -56,13 +57,19 @@ function Navbar({loggedIn, setLoggedIn}) {
             </Link>
             {loggedIn ? 
              <>
-              <div className='loggedIn'>
-                <Link to="/user-details">
-                  <PersonIcon style={{color: "rgba(255, 222, 173, 0.867)", fontSize: "24px"}} /> 
-                </Link>
-                <span className='loggedIn-person'>{username}</span>
-              </div>
-              <Link to="/login" onClick={logOut} className='btn logOut'>Log Out</Link>
+              
+              <Dropdown className='dropdown'>
+                <Dropdown.Toggle variant="light" id="dropdown-basic">
+                      <PersonIcon style={{color: "#000", fontSize: "24px"}} /> 
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.ItemText style={{textTransform: "uppercase"}}>{username}</Dropdown.ItemText>
+                  <hr style={{marginTop: "2px", marginBottom: "2px"}} />
+                  <Dropdown.Item href="/user-details">User Details</Dropdown.Item>
+                  <Dropdown.Item href="/user-settings">Settings</Dropdown.Item>
+                  <Dropdown.Item onClick={logOut} href="/login">LogOut</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
               </>
               : 
               <Link className='btn btn-secondary btn-login' to="/login">Login</Link>}
