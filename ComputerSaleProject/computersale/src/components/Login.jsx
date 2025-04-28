@@ -53,9 +53,7 @@ function Login({setLoggedIn}) {
                 email: user.email,
             }));
             setLoggedIn(true);
-
-            setTimeout(() => {
-                setLogged(true);
+            setLogged(true);
                 setTimeout(() => {
                     const alertElement = document.querySelector('.fade-alert');
                     if(alertElement) {
@@ -63,6 +61,7 @@ function Login({setLoggedIn}) {
                       setTimeout(() => setLogged(false), 500);
                     }
                   }, 3000)
+            setTimeout(() => {   
                 navigate('/');
             }, 3000)
         },
@@ -121,7 +120,7 @@ function Login({setLoggedIn}) {
         {logged && (
             <Alert 
                 variant="success" 
-                onClose={() => setErrorShowAlert(false)} 
+                onClose={() => setLogged(false)} 
                 dismissible
                 className={logged ? "fade-alert" : "fade-alert hiding"}
                 style={{

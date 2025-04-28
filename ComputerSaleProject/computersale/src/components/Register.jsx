@@ -101,7 +101,7 @@ function Register() {
         )}
         {errorShowAlert && (
             <Alert 
-                variant="success" 
+                variant="danger" 
                 onClose={() => setErrorShowAlert(false)} 
                 dismissible
                 className={errorShowAlert ? "fade-alert" : "fade-alert hiding"}
