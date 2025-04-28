@@ -65,7 +65,7 @@ function Navbar({loggedIn, setLoggedIn}) {
               <Link to="/login" onClick={logOut} className='btn logOut'>Log Out</Link>
               </>
               : 
-              <Link className='btn btn-secondary' to="/login">Login</Link>}
+              <Link className='btn btn-secondary btn-login' to="/login">Login</Link>}
         </div>
     </div>
   )

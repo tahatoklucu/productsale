@@ -97,6 +97,14 @@
     justify-content: center;
 }
 
+.btn-login {
+    font-size: 14px;
+}
+
+.logOut {
+    font-size: 14px;
+}
+
 .loggedIn-person {
     color: rgba(255, 222, 173, 0.867);
     font-size: 14px;
