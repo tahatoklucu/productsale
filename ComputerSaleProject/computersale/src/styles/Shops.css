@@ -1,4 +1,6 @@
-.computers {
+/* Shops Main */
+
+.products {
     width: 100%;
     height: auto;
     display: flex;
@@ -8,13 +10,13 @@
     background-color: #041e2f;
 }
 
-.computers .computerTitle {
+.products .productsTitle {
     padding: 50px;
     font-size: 50px;
     color: rgba(255, 222, 173, 0.867);
 }
 
-.computerList {
+.productList {
     width: 100%;
     height: auto;
     display: grid;
@@ -22,7 +24,18 @@
     place-items: center;
 }
 
-.computerItem {
+/* Shops Search */
+
+.searchForm {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    width: 20%;
+}
+
+/* Shop Item */
+
+.productItem {
     border-radius: 10px;
     width: 400px;
     height: 510px;
@@ -32,7 +45,7 @@
     border: 1.1px solid #dee0ea39;
 }
 
-.computerItem h4 {
+.productItem h4 {
     margin: 15px;
     font-size: 18px;
     font-weight: bold;
@@ -43,7 +56,7 @@
     height: 40px;
 }
 
-.computerItem p {
+.productItem p {
     margin-top: 10px;
     font-size: 20px;
     color: rgba(255, 255, 255, 0.89);
@@ -52,26 +65,21 @@
     font-weight: bold;
 }
 
-.computerItem .buttons {
+.productItem .buttons {
     display: block;
     width: 200px;
     text-align: left;
     margin-left: 50px;
 }
 
-.computerItem .image {
+.productItem .image {
     margin-top: 20px;
     height: 300px;
     width: auto;
     border-radius: 10px;
 }
 
-.searchForm {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 30px;
-    width: 20%;
-}
+/* Loading Section */
 
 .loading-container {
     height: 46vh;
@@ -84,6 +92,8 @@
     text-align: center;
     justify-content: center;
 }
+
+/* Alerts */
 
 .alert {
     display: flex;
@@ -101,8 +111,10 @@
     opacity: 0;
 }
 
+/* Shops & ShopItem - Responsive */
+
 @media (max-width: 1200px) {
-    .computerList{
+    .productList{
         display: flex;
         flex-direction: column; 
         width: 100%;
@@ -110,17 +122,17 @@
 }
 
 @media (max-width: 768px) {
-    .computerItem {
+    .productItem {
         width: 300px;
         height: 400px;
     }
-    .computerItem .image{
+    .productItem .image{
         height: 200px;
     }
-    .computerItem h4 {
+    .productItem h4 {
         font-size: 14px;
     }
-    .computerItem p {
+    .productItem p {
         font-size: 16px;
     }
     .btn-secondary {

@@ -39,7 +39,7 @@ function ShopItem({id, image, title, desc, price, onAddToCart}) {
   }
 
   return (
-    <div className='computerItem'>
+    <div className='productItem'>
         <img className='image' src={image}></img>
         <h4>{title}</h4>
         <p>{price} $</p>

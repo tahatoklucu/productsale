@@ -47,8 +47,8 @@ function Shops({setBasketCount}) {
 
    
   return (
-    <motion.div className='computers' initial={{opacity: 0.7}} animate={{opacity: 1}} transition={{duration: 0.75}} exit={{opacity: 0}} >
-        <h1 className='computerTitle'>Our Products for Sale</h1>
+    <motion.div className='products' initial={{opacity: 0.7}} animate={{opacity: 1}} transition={{duration: 0.75}} exit={{opacity: 0}} >
+        <h1 className='productsTitle'>Our Products for Sale</h1>
         <form onSubmit={handleSearch} className='searchForm'>
                 <Form.Control 
                     type='search' 
@@ -71,7 +71,7 @@ function Shops({setBasketCount}) {
                     </span>
               </div>
             ) : (
-                <div className='computerList'>
+                <div className='productList'>
                     {filteredProducts.map(item => (
                         <ShopItem
                             key={item.id}
