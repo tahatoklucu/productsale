@@ -55,8 +55,8 @@ function Navbar({loggedIn, setLoggedIn}) {
   return (
     <div className='navbar'>
         <div className='main'>
-            <img src={productLogo} alt='computerLogo'/>
-            <h2 className='computerText'>Product Sale</h2>
+            <img src={productLogo} alt='productLogo'/>
+            <h2 className='productText'>Product Sale</h2>
             <div className='LinkMain'>
                 <NavLink className="navbar-item" to="/">Products</NavLink>
                 <NavLink className="navbar-item" to="/about">About Us</NavLink>
