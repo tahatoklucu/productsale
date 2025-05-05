@@ -13,6 +13,14 @@
 
 /* Login Form */
 
+.loginTitle {
+    padding: 50px;
+    font-size: 60px;
+    color: rgba(255, 222, 173, 0.867);
+    background-color: #041e2f;
+    text-align: center;
+}
+
 .mainForm .form-label {
     font-size: 18px;
     font-weight: bold;

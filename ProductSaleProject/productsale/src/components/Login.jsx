@@ -69,74 +69,75 @@ function Login({setLoggedIn}) {
 
     const loginValues = [values.email, values.password]
   return (
-    <motion.form onSubmit={handleSubmit} className='mainForm' initial={{opacity: 0.7}}  animate={{opacity: 1}} transition={{duration: 0.75}} exit={{opacity: 0}}>
-        <div className='form-div'>
-            <label className='form-label'>Email</label>
-            <input type='email' value={values.email} onChange={handleChange} id='email' placeholder='Please enter your email' className={errors.email ? ' form-input input-error' : 'form-input'}/>
-            {errors.email && <p className='error'>{errors.email}</p>}
-        </div>
-        <div className='form-div'>
-            <label className='form-label'>Password</label>
-            <input type='password' value={values.password} onChange={handleChange} id='password' placeholder='Please enter your password' className={errors.password ? 'form-input input-error' : 'form-input'}/>
-            {errors.password && <p className='error'>{errors.password}</p>}
-        </div>
-        <button className='login-button' type='submit'>Log In</button>
-        {showAlert && (
-            <Alert 
-                variant="danger" 
-                onClose={() => setShowAlert(false)} 
-                dismissible
-                className={showAlert ? "fade-alert" : "fade-alert hiding"}
-                style={{
-                    position: 'fixed',
-                    top: '20px',
-                    right: '20px',
-                    zIndex: 9999,
-                    width: 'auto',
-                    minWidth: '200px'
-                }}
-            >
-                Invalid email or password!
-            </Alert>
-        )}
-        {errorShowAlert && (
-            <Alert 
-                variant="danger" 
-                onClose={() => setErrorShowAlert(false)} 
-                dismissible
-                className={errorShowAlert ? "fade-alert" : "fade-alert hiding"}
-                style={{
-                    position: 'fixed',
-                    top: '20px',
-                    right: '20px',
-                    zIndex: 9999,
-                    width: 'auto',
-                    minWidth: '200px'
-                }}
-            >
-                Incorrect password!
-            </Alert>
-        )}
-        {logged && (
-            <Alert 
-                variant="success" 
-                onClose={() => setLogged(false)} 
-                dismissible
-                className={logged ? "fade-alert" : "fade-alert hiding"}
-                style={{
-                    position: 'fixed',
-                    top: '20px',
-                    right: '20px',
-                    zIndex: 9999,
-                    width: 'auto',
-                    minWidth: '200px'
-                }}
-            >
-                You have successfully logged in.
-            </Alert>
-        )}
-        <Link to='/register' className='register-link'>Create a new account</Link>
-    </motion.form>
+        <motion.form onSubmit={handleSubmit} className='mainForm' initial={{opacity: 0.7}}  animate={{opacity: 1}} transition={{duration: 0.75}} exit={{opacity: 0}}>
+            <div className='loginTitle'>Login</div>
+            <div className='form-div'>
+                <label className='form-label'>Email</label>
+                <input type='email' value={values.email} onChange={handleChange} id='email' placeholder='Please enter your email' className={errors.email ? ' form-input input-error' : 'form-input'}/>
+                {errors.email && <p className='error'>{errors.email}</p>}
+            </div>
+            <div className='form-div'>
+                <label className='form-label'>Password</label>
+                <input type='password' value={values.password} onChange={handleChange} id='password' placeholder='Please enter your password' className={errors.password ? 'form-input input-error' : 'form-input'}/>
+                {errors.password && <p className='error'>{errors.password}</p>}
+            </div>
+            <button className='login-button' type='submit'>Log In</button>
+            {showAlert && (
+                <Alert 
+                    variant="danger" 
+                    onClose={() => setShowAlert(false)} 
+                    dismissible
+                    className={showAlert ? "fade-alert" : "fade-alert hiding"}
+                    style={{
+                        position: 'fixed',
+                        top: '20px',
+                        right: '20px',
+                        zIndex: 9999,
+                        width: 'auto',
+                        minWidth: '200px'
+                    }}
+                >
+                    Invalid email or password!
+                </Alert>
+            )}
+            {errorShowAlert && (
+                <Alert 
+                    variant="danger" 
+                    onClose={() => setErrorShowAlert(false)} 
+                    dismissible
+                    className={errorShowAlert ? "fade-alert" : "fade-alert hiding"}
+                    style={{
+                        position: 'fixed',
+                        top: '20px',
+                        right: '20px',
+                        zIndex: 9999,
+                        width: 'auto',
+                        minWidth: '200px'
+                    }}
+                >
+                    Incorrect password!
+                </Alert>
+            )}
+            {logged && (
+                <Alert 
+                    variant="success" 
+                    onClose={() => setLogged(false)} 
+                    dismissible
+                    className={logged ? "fade-alert" : "fade-alert hiding"}
+                    style={{
+                        position: 'fixed',
+                        top: '20px',
+                        right: '20px',
+                        zIndex: 9999,
+                        width: 'auto',
+                        minWidth: '200px'
+                    }}
+                >
+                    You have successfully logged in.
+                </Alert>
+            )}
+            <Link to='/register' className='register-link'>Create a new account</Link>
+        </motion.form>
   )
 }
 
