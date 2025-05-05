@@ -55,9 +55,9 @@ function Navbar({loggedIn, setLoggedIn}) {
   return (
     <div className='navbar'>
         <div className='main'>
-            <Link to='/'>
+            <a href='/'>
               <img src={productLogo} alt='productLogo'/>
-            </Link>
+            </a>
             <h2 className='productText'>Product Sale</h2>
             <div className='LinkMain'>
                 <NavLink className="navbar-item" to="/">Products</NavLink>
