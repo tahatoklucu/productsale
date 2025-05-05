@@ -1,3 +1,5 @@
+/* Login Main */
+
 .mainForm {
     width: 500px;
     justify-content: center;
@@ -8,6 +10,8 @@
     flex-direction: column;
     background-color: #041e2f;
 }
+
+/* Login Form */
 
 .mainForm .form-label {
     font-size: 18px;
@@ -48,6 +52,8 @@
     border-radius: 20px;
     border: none;
 }
+
+/* Login - Responsive */
 
 @media (max-width: 1100px) {
     .login-button {
