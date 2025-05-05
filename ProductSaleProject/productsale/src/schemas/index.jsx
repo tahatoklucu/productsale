@@ -31,7 +31,4 @@ export const registerSchema = yup.object().shape({
         .string()
         .oneOf([yup.ref('password')], 'The passwords do not match.')
         .required('You need to enter your password again.'),
-    isAccepted: yup
-        .boolean()
-        .oneOf([true], 'Please accept the terms of use.'),
 });
