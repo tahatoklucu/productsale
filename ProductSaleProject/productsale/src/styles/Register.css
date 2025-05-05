@@ -18,6 +18,13 @@
 
 /* Register Form */
 
+.registerTitle {
+    padding: 50px;
+    font-size: 60px;
+    color: rgba(255, 222, 173, 0.867);
+    text-align: center;
+}
+
 .register-mainForm .register-label {
     font-size: 18px;
     font-weight: bold;
