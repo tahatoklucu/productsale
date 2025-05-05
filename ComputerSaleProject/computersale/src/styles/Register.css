@@ -1,3 +1,5 @@
+/* Register Main */
+
 .register-mainForm {
     width: 500px;
     justify-content: center;
@@ -8,6 +10,13 @@
     flex-direction: column;
     background-color: #041e2f;
 }
+
+.register-div {
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+/* Register Form */
 
 .register-mainForm .register-label {
     font-size: 18px;
@@ -31,11 +40,6 @@
     color: #041e2f;
 }
 
-.register-div {
-    margin-bottom: 10px;
-    width: 300px;
-}
-
 .register-button {
     width: 7%;
     padding: 8px 8px;
@@ -52,6 +56,8 @@
 .register-link {
     color: #dee0ea;
 }
+
+/* Register - Responsive */
 
 @media (max-width: 1100px) {
     .register-button {
