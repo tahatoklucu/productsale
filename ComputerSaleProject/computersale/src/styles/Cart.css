@@ -1,3 +1,5 @@
+/* Cart Main */
+
 .cart-container, .cart-table {
     background-color: #041e2f;
 }
@@ -22,6 +24,8 @@
     margin-right: 100px;
 }
 
+/* Table */
+
 .table {
     --bs-table-bg: #041e2f;
     margin-bottom: 0;
@@ -35,6 +39,8 @@
 .table tr td {
     color: #dee0ea;
 }
+
+/* Table Product Informations */
 
 .product-img {
     width: 200px;
@@ -81,15 +87,6 @@
     position: absolute;
 }
 
-.fade-alert {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.fade-alert.hiding {
-    opacity: 0;
-}
-
 .bottom {
     display: flex;
     height: 24.4vh;
@@ -103,6 +100,19 @@
     margin-top: 30px;
     margin-left: 10px;
 }
+
+/* Alert */
+
+.fade-alert {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-alert.hiding {
+    opacity: 0;
+}
+
+/* Empty Cart section */
 
 .empty-cart {
     height: 35.4vh;
@@ -120,6 +130,8 @@
     width: 300px;
     margin-top: 40px;
 }
+
+/* Cart - Responsive */
 
 @media (max-width: 768px) {
     .cart-container .cart-title {
