@@ -9,7 +9,8 @@ function About() {
       <div className='aboutTop' style={{backgroundImage: `url(${shoppingBanner})`}}></div>
       <div className='aboutBottom'>
         <h1>About Us</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti quibusdam natus ad modi nisi asperiores impedit quaerat cum qui omnis laudantium odit, incidunt suscipit quos sint sunt amet quae commodi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus similique aspernatur, nisi error, rerum soluta cupiditate vel quos quidem est nam necessitatibus itaque veniam voluptas et natus facilis sequi nostrum. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti quibusdam natus ad modi nisi asperiores impedit quaerat cum qui omnis laudantium odit, incidunt suscipit quos sint sunt amet quae commodi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus similique aspernatur, nisi error, rerum soluta cupiditate vel quos quidem est nam necessitatibus itaque veniam voluptas et natus facilis sequi nostrum. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti quibusdam natus ad modi nisi asperiores impedit quaerat cum qui omnis laudantium odit, incidunt suscipit quos sint sunt amet quae commodi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus similique aspernatur, nisi error, rerum soluta cupiditate vel quos quidem est nam necessitatibus itaque veniam voluptas et natus facilis sequi nostrum.</p>
+        <span className='about-dev'>About Developer</span>
+        <p>Hi! I'm Taha Toklucu, a dedicated developer with a strong passion for building intuitive and efficient web applications. My goal is to combine clean code with thoughtful design to deliver engaging user experiences. This project represents my commitment to creating reliable and scalable digital solutions that not only meet today’s needs but are also ready for tomorrow’s challenges.</p>
       </div>
     </motion.div>
   )

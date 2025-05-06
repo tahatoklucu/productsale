@@ -42,6 +42,14 @@
     transform: translateY(-40px);
 }
 
+.about-dev {
+    color: rgba(255, 222, 173, 0.867);
+    text-align: left;
+    width: 70%;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
 /* About - Responsive */
 
 @media (max-width: 1200px) {
