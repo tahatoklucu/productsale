@@ -7,6 +7,7 @@ import { Alert } from 'react-bootstrap';
 function ShopItem({id, image, title, desc, price, onAddToCart}) {
   const navigate = useNavigate();
   const [showAlert, setShowAlert] = useState(false);
+  const [imgSrc, setImgSrc] = useState(image);
 
   const handleClick = async () => {
     try {
@@ -40,7 +41,7 @@ function ShopItem({id, image, title, desc, price, onAddToCart}) {
 
   return (
     <div className='productItem'>
-        <img className='image' src={image}></img>
+        <img className='image' src={imgSrc} onError={() => setImgSrc("/fallback-image.png")}></img>
         <h4>{title}</h4>
         <p>{price} $</p>
         <div className='buttons'>

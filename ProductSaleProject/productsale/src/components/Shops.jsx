@@ -16,15 +16,19 @@ function Shops({setBasketCount}) {
 
     useEffect(() => {
         setIsLoading(true);
-        axios.get("https://api.escuelajs.co/api/v1/products?offset=3&limit=12")
+        axios.get("https://api.escuelajs.co/api/v1/products?offset=0&limit=12")
         .then(response => {
+            const validProducts = response.data.filter(product => 
+                product.images?.length > 0 && product.images[0] !== ""
+            );
             setProducts(response.data);
             setFilteredProducts(response.data);
-            setIsLoading(false);
         })
         .catch(error => {
-            console.error(error);
+            console.error("API Error", error);
+            setProducts([]);
         })
+        .finally(() => setIsLoading(false));
     },[]);
 
     const handleSearch = async (e) => {
