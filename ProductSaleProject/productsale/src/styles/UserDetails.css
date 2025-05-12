@@ -4,3 +4,10 @@
     height: 70vh;
     background-color: #041e2f;
 }
+
+.user-main .user-title {
+    padding: 50px;
+    font-size: 50px;
+    color: rgba(255, 222, 173, 0.867);
+    text-align: center;
+}
