@@ -112,6 +112,14 @@
 
 /* Navbar - Responsive */
 
+@media (max-width: 1200px) {
+    .navbar .productText {
+        width: 150px;
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+}
+
 @media (max-width: 500px) {
     .navbar .main img{
         height: 60px;
