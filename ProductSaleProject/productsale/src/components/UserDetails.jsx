@@ -1,8 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/UserDetails.css';
 import { motion } from 'framer-motion';
 
 function UserDetails({loggedIn}) {
+
+  const [username, setUsername] = useState('');
+  const [userEmail, setUserEmail] = useState('');
+  const [userPassword, setUserPassword] = useState('');
+
+  useEffect(() => {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (currentUser) {
+      setUsername(currentUser.username);
+      setUserEmail(currentUser.email);
+    }
+  })
+
   return (
     <>
       {loggedIn ?
@@ -11,17 +24,17 @@ function UserDetails({loggedIn}) {
           <div className='details-container'>
             <div className='details-item'>
               <label className='label-item'>Name: </label>
-              <span className='detail-exp'>A</span>
+              <span className='detail-exp'>{username}</span>
             </div>
             <div className='details-item'>
               <label className='label-item'>Email: </label>
-              <span className='detail-exp'>A</span>
-              <button>Change your email</button>
+              <span className='detail-exp'>{userEmail}</span>
+              <button className='btn btn-primary'>Change your email</button>
             </div>
             <div className='details-item'>
               <label className='label-item'>Password: </label>
-              <input type='password'></input>
-              <button>Change your password</button>
+              <input type='text' value={userPassword}></input>
+              <button className='btn btn-primary'>Change your password</button>
             </div>
           </div>
         </motion.div>
