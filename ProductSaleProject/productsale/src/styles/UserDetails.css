@@ -11,3 +11,25 @@
     color: rgba(255, 222, 173, 0.867);
     text-align: center;
 }
+
+/* User Details */
+
+.details-container {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.details-item {
+    border: 2px solid #dee0ea;
+    height: 100px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.details-item .label-item {
+    font-size: 26px;
+    color: rgba(255, 222, 173, 0.867);
+    padding: 25px;
+    text-align: center;
+}
