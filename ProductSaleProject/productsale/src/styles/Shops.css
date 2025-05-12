@@ -115,13 +115,32 @@
 
 @media (max-width: 1200px) {
     .productList{
+        display: grid;
+        flex-direction: column; 
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }   
+    .products .productsTitle {
+        font-size: 45px;
+    }
+    .productItem {
+        width: auto;
+    }
+    .form-control {
+        width: 300px;
+    }
+    .searchForm {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .productList{
         display: flex;
         flex-direction: column; 
         width: 100%;
     }   
-}
-
-@media (max-width: 768px) {
     .productItem {
         width: 300px;
         height: 400px;
