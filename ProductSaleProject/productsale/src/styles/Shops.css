@@ -126,6 +126,9 @@
         width: 300px;
         height: 400px;
     }
+    .products .productsTitle {
+        font-size: 30px;
+    }
     .productItem .image{
         height: 200px;
     }
