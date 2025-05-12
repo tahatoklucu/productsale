@@ -30,7 +30,7 @@ function App() {
         <Route path='/register' exact element={<Register />} />
         <Route path='/products/:id' exact element={<Details />} />
         <Route path='/mycart' exact element={<Cart />} />
-        <Route path='/user-details' exact element={<UserDetails />} />
+        <Route path='/user-details' exact element={<UserDetails loggedIn={loggedIn} />} />
       </Routes>
       <Footer />
       </AnimatePresence>
