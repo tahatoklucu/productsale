@@ -1,8 +1,11 @@
 import React from 'react'
+import '../styles/UserDetails.css';
 
 function UserDetails() {
   return (
-    <div>UserDetails</div>
+    <div className='user-main'>
+        <div className='user-title'>User Details</div>
+    </div>
   )
 }
 
