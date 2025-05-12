@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/UserDetails.css';
 import { motion } from 'framer-motion';
 
-function UserDetails({loggedIn, setLoggedIn}) {
+function UserDetails({loggedIn}) {
   return (
     <>
       {loggedIn ?
@@ -12,6 +12,16 @@ function UserDetails({loggedIn, setLoggedIn}) {
             <div className='details-item'>
               <label className='label-item'>Name: </label>
               <span className='detail-exp'>A</span>
+            </div>
+            <div className='details-item'>
+              <label className='label-item'>Email: </label>
+              <span className='detail-exp'>A</span>
+              <button>Change your email</button>
+            </div>
+            <div className='details-item'>
+              <label className='label-item'>Password: </label>
+              <input type='password'></input>
+              <button>Change your password</button>
             </div>
           </div>
         </motion.div>
