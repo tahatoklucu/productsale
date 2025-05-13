@@ -33,7 +33,7 @@ function UserDetails({loggedIn}) {
             </div>
             <div className='details-item'>
               <label className='label-item'>Password: </label>
-              <input type='text' value={userPassword}></input>
+              <input type='password' value={userPassword}></input>
               <button className='btn btn-primary'>Change your password</button>
             </div>
           </div>
