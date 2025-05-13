@@ -27,7 +27,7 @@
 }
 
 .details-item .label-item {
-    font-size: 26px;
+    font-size: 24px;
     color: rgba(255, 222, 173, 0.867);
     padding: 25px;
     width: 175px;
@@ -37,12 +37,26 @@
 .details-item .detail-exp {
     color: #dee0ea;
     font-size: 18px;
-    margin-right: 30px;
-    margin-left: 30px;
+    margin: 0 30px;
     font-weight: bold;
     text-transform: uppercase;
 }
 
 .details-item .details-input {
-    
+    width: 15%;
+    margin: 0 30px;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid #dee0ea;
+    color: #dee0ea;
+    background-color: transparent;
+}
+
+.details-input::placeholder {
+    font-weight: bold;
+    color: #dee0ea;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.details-input:focus {
+    outline: none;
 }

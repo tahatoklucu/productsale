@@ -23,12 +23,13 @@ function UserDetails({loggedIn}) {
           <div className='user-title'>User Details</div>
           <div className='details-container'>
             <div className='details-item'>
-              <label className='label-item'>Name: </label>
-              <span className='detail-exp'>{username}</span>
+              <label className='label-item'>Username: </label>
+              <input type='text' className='details-input' value={username} style={{textTransform: 'uppercase'}}></input>
+              <button className='btn btn-primary'>Change your username</button>
             </div>
             <div className='details-item'>
               <label className='label-item'>Email: </label>
-              <span className='detail-exp'>{userEmail}</span>
+              <input type='email' className='details-input' value={userEmail}></input>
               <button className='btn btn-primary'>Change your email</button>
             </div>
             <div className='details-item'>
