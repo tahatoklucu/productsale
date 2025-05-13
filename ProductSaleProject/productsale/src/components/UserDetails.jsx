@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/UserDetails.css';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 function UserDetails({loggedIn}) {
 
@@ -25,17 +26,20 @@ function UserDetails({loggedIn}) {
             <div className='details-item'>
               <label className='label-item'>Username: </label>
               <input type='text' className='details-input' value={username} style={{textTransform: 'uppercase'}}></input>
-              <button className='btn btn-primary'>Change your username</button>
             </div>
             <div className='details-item'>
               <label className='label-item'>Email: </label>
               <input type='email' className='details-input' value={userEmail}></input>
-              <button className='btn btn-primary'>Change your email</button>
             </div>
             <div className='details-item'>
               <label className='label-item'>Password: </label>
               <input type='password' className='details-input' value={userPassword}></input>
-              <button className='btn btn-primary'>Change your password</button>
+            </div>
+            <div className='button-container'>
+              <button className='btn btn-light detail-button'>Update your profile</button>
+              <p>
+                <Link to="/">Back to the Main Page</Link>
+              </p>  
             </div>
           </div>
         </motion.div>

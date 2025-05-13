@@ -60,3 +60,17 @@
 .details-input:focus {
     outline: none;
 }
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-button {
+    width: 30%;
+    margin-bottom: 30px;
+}
