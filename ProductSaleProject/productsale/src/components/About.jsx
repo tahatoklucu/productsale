@@ -1,5 +1,5 @@
 import React from 'react'
-import shoppingBanner from '../assets/shoppingBanner.png';
+import shoppingBanner from '../assets/reactlogo.png';
 import '../styles/About.css';
 import { motion } from 'framer-motion';
 
