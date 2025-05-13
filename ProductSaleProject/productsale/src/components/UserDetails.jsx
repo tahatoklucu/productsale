@@ -36,9 +36,9 @@ function UserDetails({loggedIn}) {
               <input type='password' className='details-input' value={userPassword}></input>
             </div>
             <div className='button-container'>
-              <button className='btn btn-light detail-button'>Update your profile</button>
+              <button className='btn btn-success detail-button'>Update your profile</button>
               <p>
-                <Link to="/">Back to the Main Page</Link>
+                <Link to="/" className='back-button'>Back to the Main Page</Link>
               </p>  
             </div>
           </div>

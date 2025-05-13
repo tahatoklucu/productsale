@@ -61,6 +61,8 @@
     outline: none;
 }
 
+/* Buttons */
+
 .button-container {
     display: flex;
     flex-direction: column;
@@ -73,4 +75,8 @@
 .detail-button {
     width: 30%;
     margin-bottom: 30px;
+}
+
+.back-button {
+    color: #dee0ea;
 }
