@@ -22,7 +22,7 @@ function UserDetails({loggedIn}) {
       {loggedIn ?
         <motion.div className='user-main' initial={{opacity: 0.7}}  animate={{opacity: 1}} transition={{duration: 0.75}} exit={{opacity: 0}}>
           <div className='user-title'>User Details</div>
-          <div className='details-container'>
+          <div className='userDetails-container'>
             <div className='details-item'>
               <label className='label-item'>Username: </label>
               <input type='text' className='details-input' value={username} style={{textTransform: 'uppercase'}}></input>
