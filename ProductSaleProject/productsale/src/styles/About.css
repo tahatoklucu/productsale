@@ -67,6 +67,9 @@
 }
 
 @media (max-width: 768px) {
+    .about {
+        height: 110vh;
+    }
     .about .aboutBottom h1 {
         font-size: 45px;
     }
@@ -77,12 +80,16 @@
     .about-dev {
         width: 300px;
     }
+    .tech {
+        width: 300px;
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 500px) {
     .aboutTop {
         margin: 0;
-        height: 300px;
+        height: 200px;
     }
     .aboutBottom p {
         width: 300px;
