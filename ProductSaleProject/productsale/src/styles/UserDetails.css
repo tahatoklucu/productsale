@@ -30,12 +30,19 @@
     font-size: 26px;
     color: rgba(255, 222, 173, 0.867);
     padding: 25px;
+    width: 175px;
+    border-right: 2px solid #dee0ea;
 }
 
 .details-item .detail-exp {
     color: #dee0ea;
     font-size: 18px;
     margin-right: 30px;
+    margin-left: 30px;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+.details-item .details-input {
+    
 }
