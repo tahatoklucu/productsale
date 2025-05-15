@@ -27,9 +27,13 @@
     margin-right: 50px;
 }
 
-.navbar .main img {
+.navbar .product-image {
     height: 90px;
-    margin-left: 50px;
+}
+
+.navbar .main img {
+    height: 25px;
+    border-radius: 5px;
 }
 
 .navbar .navbar-item {
@@ -50,6 +54,7 @@
     align-items: center;
     width: 70%;
 }
+
 
 /* Icon */
 

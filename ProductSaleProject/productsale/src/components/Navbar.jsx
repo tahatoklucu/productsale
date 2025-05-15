@@ -58,7 +58,7 @@ function Navbar({loggedIn, setLoggedIn}) {
     <div className='navbar'>
         <div className='main'>
             <Link to='/'>
-              <img src={productLogo} alt='productLogo'/>
+              <img src={productLogo} alt='productLogo' style={{height: '90px', marginLeft: '50px'}}/>
             </Link>
             <h2 className='productText'>Product Sale</h2>
             <div className='LinkMain'>
