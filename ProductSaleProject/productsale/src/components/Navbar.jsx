@@ -76,7 +76,7 @@ function Navbar({loggedIn, setLoggedIn}) {
              <>
               <Dropdown className='dropdown'>
                 <Dropdown.Toggle variant="light" id="dropdown-basic">
-                    <img className='dropdown-image' src={currentUser.avatar || <PersonIcon />}></img>
+                    <img className='dropdown-image' src={currentUser.avatar}></img>
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                   <Dropdown.ItemText style={{textTransform: "uppercase"}}>{username}</Dropdown.ItemText>
