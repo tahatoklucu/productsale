@@ -25,6 +25,14 @@ function UserDetails({ loggedIn }) {
       password: userPassword
     };
     localStorage.setItem('currentUser', JSON.stringify(updatedUser));
+
+    const allUsers = JSON.parse(localStorage.getItem('users')) || [];
+    const userIndex = allUsers.findIndex(user => user.email === userEmail);
+
+    if(userIndex !== -1) {
+      allUsers[userIndex] = updatedUser;
+      localStorage.setItem('users', JSON.stringify(allUsers));
+    }
   }
 
   return (
