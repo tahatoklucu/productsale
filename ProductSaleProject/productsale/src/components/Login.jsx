@@ -51,6 +51,7 @@ function Login({setLoggedIn}) {
                 id: user.id,
                 username: user.username,
                 email: user.email,
+                password: user.password
             }));
             setLoggedIn(true);
             setLogged(true);

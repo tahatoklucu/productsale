@@ -3,19 +3,29 @@ import '../styles/UserDetails.css';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-function UserDetails({loggedIn}) {
+function UserDetails({ loggedIn }) {
 
   const [username, setUsername] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
 
   useEffect(() => {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
     if (currentUser) {
-      setUsername(currentUser.username);
-      setUserEmail(currentUser.email);
+      setUsername(currentUser.username) || '';
+      setUserEmail(currentUser.email) || '';
+      setUserPassword(currentUser.password) || '';
     }
-  })
+  }, [])
+
+  const handleUpdateProfile = () => {
+    const updatedUser = {
+      username,
+      email: userEmail,
+      password: userPassword
+    };
+    localStorage.setItem('currentUser', JSON.stringify(updatedUser));
+  }
 
   return (
     <>
@@ -25,18 +35,18 @@ function UserDetails({loggedIn}) {
           <div className='userDetails-container'>
             <div className='details-item'>
               <label className='label-item'>Username: </label>
-              <input type='text' className='details-input' value={username} style={{textTransform: 'uppercase'}}></input>
+              <input type='text' className='details-input' onChange={(e) => setUsername(e.target.value)} value={username} style={{textTransform: 'uppercase'}}></input>
             </div>
             <div className='details-item'>
               <label className='label-item'>Email: </label>
-              <input type='email' className='details-input' value={userEmail}></input>
+              <input type='email' className='details-input' onChange={(e) => setUserEmail(e.target.value)} value={userEmail}></input>
             </div>
             <div className='details-item'>
               <label className='label-item'>Password: </label>
-              <input type='password' className='details-input' value={userPassword}></input>
+              <input type='password' className='details-input' onChange={(e) => setUserPassword(e.target.value)} value={userPassword}></input>
             </div>
             <div className='button-container'>
-              <button className='btn btn-success detail-button'>Update your profile</button>
+              <button className='btn btn-success detail-button' onClick={handleUpdateProfile}>Update your profile</button>
               <p>
                 <Link to="/" className='back-button'>Back to the Main Page</Link>
               </p>  
