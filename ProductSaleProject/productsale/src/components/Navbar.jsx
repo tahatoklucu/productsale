@@ -14,6 +14,8 @@ function Navbar({loggedIn, setLoggedIn}) {
   const [showAlert, setShowAlert] = useState(false);
   const navigate = useNavigate();
 
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
   useEffect(() => {
     const updateBasketCount = () => {
       const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
@@ -74,7 +76,7 @@ function Navbar({loggedIn, setLoggedIn}) {
              <>
               <Dropdown className='dropdown'>
                 <Dropdown.Toggle variant="light" id="dropdown-basic">
-                      <PersonIcon style={{color: "#000", fontSize: "24px"}} /> 
+                    <img className='dropdown-image' src={currentUser.avatar || <PersonIcon />}></img>
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                   <Dropdown.ItemText style={{textTransform: "uppercase"}}>{username}</Dropdown.ItemText>
