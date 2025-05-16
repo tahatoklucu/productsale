@@ -2,6 +2,8 @@
 
 A simple e-commerce frontend built with **React** and **JavaScript (ES6+)**, featuring product listing, category filtering, and search functionality.
 
+---
+
 ## 🚀 Live Demo
 
 🔗 [View Live](https://productsale-gray.vercel.app)
