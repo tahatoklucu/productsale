@@ -21,7 +21,6 @@ A simple e-commerce frontend built with **React** and **JavaScript (ES6+)**, fea
 
 - 🛒 Product listing with images, names, and prices  
 - 🔍 Search functionality by product name  
-- 📂 Filter by category  
 - 💡 Responsive design (mobile-friendly)  
 - ⚡ Fast and lightweight performance  
 
