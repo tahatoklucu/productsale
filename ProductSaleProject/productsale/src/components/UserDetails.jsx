@@ -61,15 +61,15 @@ function UserDetails({ loggedIn }) {
           <div className='user-title'>User Details</div>
           <div className='userPage'>
             <div className='userAvatar'>
-              <div className='avatar-preview' onClick={() => fileInputRef.current.click()} style={{backgroundImage: `url(${avatarPreview || PersonIcon})`, cursor: 'pointer', width: '250px', borderRadius: '10px'}}>
+              <div className='avatar-preview' onClick={() => fileInputRef.current.click()} style={{backgroundImage: `url(${avatarPreview || PersonIcon})`, cursor: 'pointer', borderRadius: '10px'}}>
                 {avatarPreview ? 
                   <div className='image-container'>
-                    <img src={avatarPreview} style={{borderRadius: '10px', width: '400px', height: '400px'}}></img>
+                    <img src={avatarPreview}  style={{borderRadius: '10px', width: '400px', height: '400px'}}></img>
                   </div>
                   :
-                  <>
-                    <PersonIcon style={{width: '400px', height: '400px', color: '#dee0ea', border: '1px solid #dee0ea', borderRadius: '10px'}} />
-                  </>
+                  <div className='icon'>
+                    <PersonIcon />
+                  </div>
                 }
               </div>
               <input className='file-upload' type='file' ref={fileInputRef} onChange={handleAvatarChange} accept='image/*'></input>
