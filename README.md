@@ -32,9 +32,10 @@ A simple e-commerce frontend built with **React** and **JavaScript (ES6+)**, fea
 productsale/
 ├── public/
 ├── src/
+│   ├── assets/
 │   ├── components/
-│   ├── pages/
-│   ├── data/
+│   ├── schemas/
+│   ├── styles/
 │   └── App.js
 ├── package.json
 └── README.md
