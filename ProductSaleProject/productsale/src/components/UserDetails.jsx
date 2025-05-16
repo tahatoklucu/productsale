@@ -61,11 +61,11 @@ function UserDetails({ loggedIn }) {
           <div className='user-title'>User Details</div>
           <div className='userPage'>
             <div className='userAvatar'>
-              <div className='avatar-preview' onClick={() => fileInputRef.current.click()} style={{backgroundImage: `url(${avatarPreview || PersonIcon})`, cursor: 'pointer', width: '250px'}}>
+              <div className='avatar-preview' onClick={() => fileInputRef.current.click()} style={{backgroundImage: `url(${avatarPreview || PersonIcon})`, cursor: 'pointer', width: '250px', borderRadius: '10px'}}>
                 {!avatarPreview && <span>+</span>}
                 {avatarPreview ? 
                   <div className='image-container'>
-                    <img src={avatarPreview}></img>
+                    <img src={avatarPreview} style={{borderRadius: '10px'}}></img>
                   </div>
                   :
                   <>
