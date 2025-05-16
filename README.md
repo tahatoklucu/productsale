@@ -1,6 +1,6 @@
 # 🛍️ ProductSale
 
-A simple e-commerce frontend built with **React** and **JavaScript (ES6+)**, featuring product listing, category filtering, and search functionality.
+A simple e-commerce frontend built with **React** and **JavaScript (ES6+)**, featuring product listing, name filtering, and search functionality.
 
 ---
 
