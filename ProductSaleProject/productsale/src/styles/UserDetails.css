@@ -31,6 +31,10 @@
     border-radius: 10px;
 }
 
+.userAvatar .avatar-preview {
+    width: 250px;
+}
+
 .file-upload {
     margin-top: 30px;
     color: #dee0ea;
@@ -77,6 +81,14 @@
     outline: none;
 }
 
+.icon svg {
+    width: 400px;
+    height: 400px;
+    border: 1px solid #dee0ea;
+    border-radius: 10px;
+    color: #dee0ea;
+}
+
 /* Buttons */
 
 .button-container {
@@ -95,18 +107,6 @@
 
 .back-button {
     color: #dee0ea;
-}
-
-.icon svg {
-    width: 400px;
-    height: 400px;
-    border: 1px solid #dee0ea;
-    border-radius: 10px;
-    color: #dee0ea;
-}
-
-.userAvatar .avatar-preview {
-    width: 250px;
 }
 
 /* Responsive */
