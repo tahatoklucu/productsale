@@ -18,6 +18,17 @@
     padding: 50px;
     display: flex;
     flex-direction: column;
+    width: 100%;
+}
+
+.userPage {
+    display: flex;
+    gap: 50px;
+}
+
+.userAvatar {
+    padding: 50px;
+    border-radius: 10px;
 }
 
 .details-item {
