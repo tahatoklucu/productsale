@@ -36,7 +36,7 @@
     height: 90px;
 }
 
-.navbar .main img {
+.navbar .main .dropdown img {
     height: 25px;
     border-radius: 5px;
 }
