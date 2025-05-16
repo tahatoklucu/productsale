@@ -73,7 +73,7 @@ function UserDetails({ loggedIn }) {
                   </>
                 }
               </div>
-              <input type='file' ref={fileInputRef} onChange={handleAvatarChange} accept='image/*'></input>
+              <input className='file-upload' type='file' ref={fileInputRef} onChange={handleAvatarChange} accept='image/*'></input>
             </div>
             <div className='userDetails-container'>
               <div className='details-item'>

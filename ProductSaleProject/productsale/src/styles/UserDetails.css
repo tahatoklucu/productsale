@@ -31,6 +31,11 @@
     border-radius: 10px;
 }
 
+.file-upload {
+    margin-top: 30px;
+    color: #dee0ea;
+}
+
 .details-item {
     border: 2px solid #dee0ea;
     border-radius: 10px;
