@@ -64,7 +64,7 @@ function UserDetails({ loggedIn }) {
               <div className='avatar-preview' onClick={() => fileInputRef.current.click()} style={{backgroundImage: `url(${avatarPreview || PersonIcon})`, cursor: 'pointer', borderRadius: '10px'}}>
                 {avatarPreview ? 
                   <div className='image-container'>
-                    <img src={avatarPreview}  style={{borderRadius: '10px', width: '400px', height: '400px'}}></img>
+                    <img src={avatarPreview} className='image-avatar'></img>
                   </div>
                   :
                   <div className='icon'>

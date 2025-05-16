@@ -109,6 +109,12 @@
     color: #dee0ea;
 }
 
+.image-avatar {
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+}
+
 /* UserDetails - Responsive */
 
 @media (max-width: 500px) {
@@ -124,7 +130,12 @@
     }
     .userAvatar .avatar-preview {
         text-align: center;
-        width: auto;
+        width: 200px;
+        justify-content: center;
+    }
+    .image-avatar {
+        width: 290px;
+        height: 290px;
     }
     .file-upload {
         display: none;
