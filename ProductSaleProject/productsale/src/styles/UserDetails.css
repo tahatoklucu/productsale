@@ -181,7 +181,8 @@
     }
     .details-item .label-item {
         font-size: 18px;
-        width: 125px;
+        width: auto;
+        border-bottom: 1px solid #dee0ea;
         border-right: none;
     }
     .details-item .details-input {

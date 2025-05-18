@@ -76,15 +76,15 @@ function UserDetails({ loggedIn }) {
             </div>
             <div className='userDetails-container'>
               <div className='details-item'>
-                <label className='label-item'>Username: </label>
+                <label className='label-item'>Username</label>
                 <input type='text' className='details-input' onChange={(e) => setUsername(e.target.value)} value={username} style={{textTransform: 'uppercase'}}></input>
               </div>
               <div className='details-item'>
-                <label className='label-item'>Email: </label>
+                <label className='label-item'>Email</label>
                 <input type='email' className='details-input' onChange={(e) => setUserEmail(e.target.value)} value={userEmail}></input>
               </div>
               <div className='details-item'>
-                <label className='label-item'>Password: </label>
+                <label className='label-item'>Password</label>
                 <input type='password' className='details-input' onChange={(e) => setUserPassword(e.target.value)} value={userPassword}></input>
               </div>
               <div className='button-container'>
