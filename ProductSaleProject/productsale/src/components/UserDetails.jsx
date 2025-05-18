@@ -97,9 +97,25 @@ function UserDetails({ loggedIn }) {
             </div>
         </motion.div>
         : 
-        <>
-          <span>You're not logged in yet!</span>
-        </>
+        <div className='not-logged-container'>
+          <div className='user-title'>User Details</div>
+          <div className='not-logged'> 
+              <h1 className='not-logged-message'>You're not logged in yet!</h1>
+              <p>
+                <button className='btn btn-success not-logged-button' onClick={() => window.location.href = "/login"}>
+                      Go to the Login page
+                </button>
+              </p>
+              <p>
+                <button className='btn btn-light not-logged-button' onClick={() => window.location.href = "/"} style={{marginTop: '10px'}}>
+                      Continue Shopping
+                </button>
+              </p>
+          </div>
+          <div className='button-container'>
+              
+          </div>
+        </div>
       }
       
     </>
