@@ -134,6 +134,9 @@
         height: 60px;
         margin-left: 10px;
     }
+    .btn-login {
+        font-size: 10px;
+    }
     .navbar .LinkMain {
         width: 100%;
     }

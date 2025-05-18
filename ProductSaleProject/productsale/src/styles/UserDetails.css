@@ -156,6 +156,9 @@
     .userPage {
         display: block;
     }
+    .user-title{
+        font-size: 40px;
+    }
     .icon svg {
         width: 200px;
         height: 200px;
@@ -187,5 +190,12 @@
     }
     .detail-button {
         width: 100%;
+    }
+    .not-logged-message {
+        font-size: 26px;
+    }
+    .not-logged-button {
+        padding: 7px;
+        width: 250px;
     }
 }
