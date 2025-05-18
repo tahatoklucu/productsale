@@ -5,7 +5,7 @@
     height: 70vh;
     display: flex;
     flex-direction: column;
-    background-color: #041e2f;
+    background-color: var(--main-color);
 }
   
 .aboutTop {
@@ -27,7 +27,7 @@
 .aboutBottom p {
     width: 1200px;
     margin-top: 30px;
-    color: #fff;
+    color: var(--white);
     font-size: 20px;
 }
 
@@ -35,7 +35,7 @@
     margin-bottom: 10px;
     font-weight: 400;
     font-size: 70px;
-    color: rgba(255, 222, 173, 0.867);
+    color: var(--secondary-color);
     height: 30px;
     display: flex;
     justify-content: center;
@@ -43,7 +43,7 @@
 }
 
 .about-dev {
-    color: rgba(255, 222, 173, 0.867);
+    color: var(--secondary-color);
     text-align: left;
     width: 1200px;
     font-size: 24px;
@@ -51,7 +51,7 @@
 }
 
 .tech {
-    color: #dee0ea;
+    color: var(--dark-white);
     width: 1200px;
     font-size: 18px;
     margin-top: 20px;

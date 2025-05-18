@@ -1,5 +1,13 @@
 @import url('bootstrap/dist/css/bootstrap.min.css');
 
+:root {
+    --main-color: #041e2f;
+    --secondary-color: rgba(255, 222, 173, 0.867);
+    --dark-white: #dee0ea;
+    --white: #fff;
+    --black: #000;
+}
+
 * {
     margin: 0;
     padding: 0;

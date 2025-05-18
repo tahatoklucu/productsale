@@ -3,7 +3,7 @@
 .footer {
     width: 100%;
     height: 194.5px;
-    background-color: #041e2f;
+    background-color: var(--main-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,13 +12,13 @@
 }
 
 .footer p {
-    color: #fff;
+    color: var(--white);;
 }
 
 /* Icons */
 
 .socialIcon svg {
-    color: #fff;
+    color: var(--white);;
     margin: 20px;
     font-size: 40px;
     cursor: pointer;
@@ -26,5 +26,5 @@
 }
 
 .socialIcon svg:hover {
-    color: rgba(255, 222, 173, 0.867);
+    color: var(--secondary-color);
 }

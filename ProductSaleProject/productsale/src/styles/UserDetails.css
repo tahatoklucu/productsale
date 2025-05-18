@@ -2,13 +2,13 @@
 
 .user-main {
     height: 80vh;
-    background-color: #041e2f;
+    background-color: var(--main-color);
 }
 
 .user-title {
     padding: 50px;
     font-size: 50px;
-    color: rgba(255, 222, 173, 0.867);
+    color: var(--secondary-color);
     text-align: center;
 }
 
@@ -43,25 +43,25 @@
 
 .file-upload {
     margin-top: 30px;
-    color: #dee0ea;
+    color: var(--dark-white);
 }
 
 .details-item {
-    border: 2px solid #dee0ea;
+    border: 2px solid var(--dark-white);
     border-radius: 10px;
     margin-bottom: 30px;
 }
 
 .details-item .label-item {
     font-size: 24px;
-    color: rgba(255, 222, 173, 0.867);
+    color: var(--secondary-color);
     padding: 25px;
     width: 175px;
-    border-right: 2px solid #dee0ea;
+    border-right: 2px solid var(--dark-white);
 }
 
 .details-item .detail-exp {
-    color: #dee0ea;
+    color: var(--dark-white);
     font-size: 18px;
     margin: 0 30px;
     font-weight: bold;
@@ -73,14 +73,14 @@
     margin: 0 30px;
     height: 40px;
     border: none;
-    border-bottom: 1px solid #dee0ea;
-    color: #dee0ea;
+    border-bottom: 1px solid var(--dark-white);
+    color: var(--dark-white);
     background-color: transparent;
 }
 
 .details-input::placeholder {
     font-weight: bold;
-    color: #dee0ea;
+    color: var(--dark-white);
     font-family: Arial, Helvetica, sans-serif;
 }
 .details-input:focus {
@@ -90,9 +90,9 @@
 .icon svg {
     width: 400px;
     height: 400px;
-    border: 1px solid #dee0ea;
+    border: 1px solid var(--dark-white);
     border-radius: 10px;
-    color: #dee0ea;
+    color: var(--dark-white);
 }
 
 /* Buttons */
@@ -112,7 +112,7 @@
 }
 
 .back-button {
-    color: #dee0ea;
+    color: var(--dark-white);
 }
 
 /* Not Logged In Section */
@@ -120,11 +120,11 @@
 .not-logged {
     height: 80vh;
     text-align: center;
-    background-color: #041e2f;
+    background-color: var(--main-color);
 }
 
 .not-logged-container {
-    background-color: #041e2f;
+    background-color: var(--main-color);
     width: 100%;
     height: auto;
 }
@@ -136,7 +136,7 @@
 
 .not-logged-message {
     text-align: center;
-    color: #dee0ea;
+    color: var(--dark-white);
     margin-top: 150px;
 }
 
@@ -182,7 +182,7 @@
     .details-item .label-item {
         font-size: 18px;
         width: auto;
-        border-bottom: 1px solid #dee0ea;
+        border-bottom: 1px solid var(--dark-white);
         border-right: none;
     }
     .details-item .details-input {

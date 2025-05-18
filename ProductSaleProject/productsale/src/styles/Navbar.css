@@ -3,11 +3,11 @@
 .navbar {
     width: 100%;
     height: 100px;
-    background-color: #041e2f;
+    background-color: var(--main-color);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    border-bottom: #fff 300px;
+    border-bottom: var(--white) 300px;
 }
 
 .navbar .main {
@@ -19,7 +19,7 @@
 .navbar .productText {
     padding: 10px;
     font-size: 19px;
-    color: #dee0ea;
+    color: var(--dark-white);
 }
 
 .navbar .productLogo {
@@ -42,7 +42,7 @@
 }
 
 .navbar .navbar-item {
-    color: #dee0ea;
+    color: var(--dark-white);
     text-decoration: none;
     margin-right: 20px;
     font-size: 20px;
@@ -51,7 +51,7 @@
 
 .navbar a:hover,
 .navbar a.active {
-    color: rgba(255, 222, 173, 0.867);
+    color: var(--secondary-color);
 }
 
 .navbar .LinkMain {
@@ -63,7 +63,7 @@
 /* Icon */
 
 .shopIcon {
-    color: #000;
+    color: var(--black);
     text-decoration: none;
 }
 
@@ -80,7 +80,7 @@
     text-align: center;
     background-color: #5abed8;
     text-decoration: none;
-    color: #000;
+    color: var(--black);
     border-radius: 10px;
     border: none;
     cursor: pointer;
@@ -88,15 +88,15 @@
 }
 
 .main .login-register:hover {
-    background-color: rgba(255, 222, 173, 0.867);
-    color: #041e2f;
+    background-color: var(--secondary-color);
+    color: var(--main-color);
 }
 
 .basketCount {
     position: relative;
     left: 28px;
     bottom: 8px;
-    background-color: rgba(255, 222, 173, 0.867);
+    background-color: var(--secondary-color);
     padding: 2px;
     border-radius: 100%;
     font-size: 10px;
@@ -116,7 +116,7 @@
 }
 
 .dropdown-menu.show a:hover {
-    color: #000;
+    color: var(--black);
 }
 
 /* Navbar - Responsive */
