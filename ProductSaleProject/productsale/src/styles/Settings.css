@@ -11,3 +11,45 @@
     color: var(--secondary-color);
     text-align: center;
 }
+
+/* Theme */
+
+.change-theme-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.theme-title {
+    font-size: 24px;
+    color: var(--secondary-color);
+    margin-left: 80px;
+    text-decoration: underline;
+}
+
+.theme-button, .theme-button2, .theme-button3, .theme-button4 {
+    margin-left: 80px;
+    margin-top: 20px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 100%;
+}
+
+.theme-button {
+    background-color: var(--black);
+}
+
+.theme-button2 {
+    margin-left: 10px;
+    background-color: var(--white);
+}
+
+.theme-button3 {
+    margin-left: 10px;
+    background-color: #ff0000;
+}
+
+.theme-button4 {
+    margin-left: 10px;
+    background-color: var(--secondary-color);
+}
