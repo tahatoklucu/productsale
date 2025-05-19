@@ -136,9 +136,6 @@ function UserDetails({ loggedIn }) {
                 </button>
               </p>
           </div>
-          <div className='button-container'>
-              
-          </div>
         </div>
       }
       
