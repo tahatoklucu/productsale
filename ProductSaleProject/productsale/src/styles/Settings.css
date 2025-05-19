@@ -46,10 +46,10 @@
 
 .theme-button3 {
     margin-left: 10px;
-    background-color: #ff0000;
+    background-color: var(--secondary-color);
 }
 
 .theme-button4 {
     margin-left: 10px;
-    background-color: var(--secondary-color);
+    background-color: var(--main-color);
 }
