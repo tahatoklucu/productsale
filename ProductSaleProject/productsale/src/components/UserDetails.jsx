@@ -3,6 +3,7 @@ import '../styles/UserDetails.css';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PersonIcon from '@mui/icons-material/Person';
+import { Alert } from 'react-bootstrap';
 
 function UserDetails({ loggedIn }) {
 
@@ -12,6 +13,7 @@ function UserDetails({ loggedIn }) {
   const [avatar, setAvatar] = useState(null);
   const [avatarPreview, setAvatarPreview] = useState('');
   const fileInputRef = useRef(null);
+  const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
     const currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
@@ -43,6 +45,7 @@ function UserDetails({ loggedIn }) {
       avatar: avatarPreview
     };
 
+    setShowAlert(true);
     localStorage.setItem('currentUser', JSON.stringify(updatedUser));
 
     const allUsers = JSON.parse(localStorage.getItem('users')) || [];
@@ -52,6 +55,9 @@ function UserDetails({ loggedIn }) {
       allUsers[userIndex] = updatedUser;
       localStorage.setItem('users', JSON.stringify(allUsers));
     }
+    setTimeout(() => {
+      window.location.reload(); 
+    }, 3000);
   }
 
   return (
@@ -89,6 +95,24 @@ function UserDetails({ loggedIn }) {
               </div>
               <div className='button-container'>
                 <button className='btn btn-success detail-button' onClick={handleUpdateProfile}>Update your profile</button>
+                {showAlert && (
+                <Alert 
+                    variant="success" 
+                    onClose={() => setShowAlert(false)} 
+                    dismissible
+                    className={showAlert ? "fade-alert" : "fade-alert hiding"}
+                    style={{
+                        position: 'fixed',
+                        top: '20px',
+                        right: '20px',
+                        zIndex: 9999,
+                        width: 'auto',
+                        minWidth: '200px'
+                    }}
+                >
+                You have successfully updated your profile.
+                </Alert>
+                )}
                 <p>
                   <Link to="/" className='back-button'>Back to the Main Page</Link>
                 </p>  
