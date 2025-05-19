@@ -12,6 +12,7 @@ import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Cart from './components/Cart';
 import UserDetails from './components/UserDetails';
+import Settings from './components/Settings';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
         <Route path='/products/:id' exact element={<Details />} />
         <Route path='/mycart' exact element={<Cart />} />
         <Route path='/user-details' exact element={<UserDetails loggedIn={loggedIn} />} />
+        <Route path='/user-settings' exact element={<Settings loggedIn={loggedIn} />} />
       </Routes>
       <Footer />
       </AnimatePresence>

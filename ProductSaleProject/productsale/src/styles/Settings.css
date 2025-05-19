@@ -1,0 +1,13 @@
+/* User Settings Main */
+
+.settings-main {
+    height: 80vh;
+    background-color: var(--main-color);
+}
+
+.settings-title {
+    padding: 50px;
+    font-size: 50px;
+    color: var(--secondary-color);
+    text-align: center;
+}
