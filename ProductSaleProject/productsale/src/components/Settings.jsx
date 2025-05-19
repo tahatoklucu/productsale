@@ -5,7 +5,7 @@ function Settings({loggedIn}) {
   return (
     <>
         <div className='settings-main'>
-            <div className='settings-title'>User Settings</div>
+            <div className='settings-title'>Settings</div>
         </div>
     </>
   )
