@@ -15,12 +15,14 @@ import UserDetails from './components/UserDetails';
 import Settings from './components/Settings';
 
 function App() {
+
+  const [basketCount, setBasketCount] = useState(0);
   const [loggedIn, setLoggedIn] = useState(false);
 
   return (
     <div className='mainHome'>
       <AnimatePresence>
-      <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+      <Navbar basketCount={basketCount} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
       <Routes>
         <Route path='/' exact element={<Shops setBasketCount={setBasketCount} />}  />
         <Route path='/about' exact element={<About />} />
