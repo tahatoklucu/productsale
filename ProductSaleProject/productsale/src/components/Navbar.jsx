@@ -91,7 +91,7 @@ function Navbar({loggedIn, setLoggedIn}) {
                   <hr style={{marginTop: "2px", marginBottom: "2px"}} />
                   <Dropdown.Item href="/user-details">User Details</Dropdown.Item>
                   <Dropdown.Item href="/user-settings">Settings</Dropdown.Item>
-                  <Dropdown.Item onClick={logOut} >Log Out</Dropdown.Item>
+                  <Dropdown.Item onClick={logOut}>Log Out</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
               </>
