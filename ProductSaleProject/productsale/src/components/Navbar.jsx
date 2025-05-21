@@ -6,6 +6,8 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import PersonIcon from '@mui/icons-material/Person';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { Alert } from 'react-bootstrap';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import { useTheme } from '../contexts/ThemeContext';
 
 function Navbar({loggedIn, setLoggedIn}) {
   
@@ -13,7 +15,9 @@ function Navbar({loggedIn, setLoggedIn}) {
   const [username, setUsername] = useState('');
   const [avatar, setAvatar] = useState('');
   const [showAlert, setShowAlert] = useState(false);
+  const [themeAlert, setThemeAlert] = useState(false);
   const navigate = useNavigate();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const updateBasketCount = () => {
@@ -51,6 +55,14 @@ function Navbar({loggedIn, setLoggedIn}) {
     }, 3000)
     setTimeout(() => {
       navigate('/login');
+    }, 3000)
+  }
+
+  const handleClick = () => {
+    toggleTheme('dark');
+    setThemeAlert(true);
+    setTimeout(() => {
+      window.location.reload(); 
     }, 3000)
   }
 
@@ -98,6 +110,26 @@ function Navbar({loggedIn, setLoggedIn}) {
               : 
               <>
                 <Link className='btn btn-secondary btn-login' to="/login">Login</Link>
+                <button className='theme-icon' onClick={handleClick}>
+                  <DarkModeIcon />
+                </button>
+                {themeAlert && (
+                  <Alert 
+                      variant="success" 
+                      onClose={() => setThemeAlert(false)} 
+                      dismissible
+                      style={{
+                          position: 'fixed',
+                          top: '20px',
+                          right: '20px',
+                          zIndex: 9999,
+                          width: 'auto',
+                          minWidth: '200px'
+                      }}
+                  >
+                      Your theme will be updated in 3 seconds!
+                </Alert>
+                )}
                 {showAlert && (
                   <Alert 
                       variant="success" 
@@ -115,7 +147,7 @@ function Navbar({loggedIn, setLoggedIn}) {
                   >
                       You made a successful exit.
                 </Alert>
-              )}
+                )}
               </>
             }
         </div>

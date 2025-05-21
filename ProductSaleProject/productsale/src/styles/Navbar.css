@@ -74,6 +74,13 @@
     color: rgb(222, 224, 234);
 }
 
+.theme-icon {   
+    border: none;
+    background-color: transparent;
+    color: var(--white);
+    margin-left: 20px;
+}
+
 /* Buttons & Cart */
 
 .main .login-register {
