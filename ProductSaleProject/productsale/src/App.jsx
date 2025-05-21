@@ -13,14 +13,18 @@ import { AnimatePresence } from 'framer-motion';
 import Cart from './components/Cart';
 import UserDetails from './components/UserDetails';
 import Settings from './components/Settings';
+import { ThemeProvider } from './contexts/ThemeContext';
+import { useTheme } from './contexts/ThemeContext';
 
 function App() {
 
   const [basketCount, setBasketCount] = useState(0);
   const [loggedIn, setLoggedIn] = useState(false);
+  const { theme } = useTheme();
 
   return (
-    <div className='mainHome'>
+    <div className='mainHome' data-theme={theme}>
+      <ThemeProvider>
       <AnimatePresence>
       <Navbar basketCount={basketCount} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
       <Routes>
@@ -36,6 +40,7 @@ function App() {
       </Routes>
       <Footer />
       </AnimatePresence>
+      </ThemeProvider>
     </div>
   )
 }

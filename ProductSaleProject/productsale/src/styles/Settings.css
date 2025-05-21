@@ -26,7 +26,7 @@
     text-decoration: underline;
 }
 
-.theme-button, .theme-button2, .theme-button3, .theme-button4 {
+.theme-button, .theme-button2, .theme-button3 {
     margin-left: 80px;
     margin-top: 20px;
     width: 20px;
@@ -53,10 +53,6 @@
     background-color: var(--secondary-color);
 }
 
-.theme-button4 {
-    margin-left: 10px;
-    background-color: var(--main-color);
-}
 
 .delete-container {
     display: flex;

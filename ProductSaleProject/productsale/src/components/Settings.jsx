@@ -1,8 +1,33 @@
 import React from 'react'
 import '../styles/Settings.css';
 import { motion } from 'framer-motion';
+import { useTheme } from '../contexts/ThemeContext';
 
 function Settings({loggedIn}) {
+  
+  const { theme, toggleTheme } = useTheme();
+
+  const handleClickDark = () => {
+    toggleTheme('dark');
+    setTimeout(() => {
+      window.location.reload(); 
+    }, 2000)
+  }
+
+  const handleClickLight = () => {
+    toggleTheme('light');
+    setTimeout(() => {
+      window.location.reload(); 
+    }, 2000)
+  }
+
+  const handleClickCream = () => {
+    toggleTheme('cream');
+    setTimeout(() => {
+      window.location.reload(); 
+    }, 2000)
+  }
+
   return (
     <>
       {loggedIn ? 
@@ -12,10 +37,9 @@ function Settings({loggedIn}) {
           <div className='change-theme-container'>
               <label className='theme-title'>Theme:</label>
               <div className='buttons-container'>
-                  <button className='theme-button'></button>
-                  <button className='theme-button2'></button>
-                  <button className='theme-button3'></button>
-                  <button className='theme-button4'></button>
+                  <button className='theme-button' onClick={handleClickDark}></button>
+                  <button className='theme-button2' onClick={handleClickLight}></button>
+                  <button className='theme-button3' onClick={handleClickCream}></button>
               </div>
           </div>
           <hr style={{color: 'var(--white)', marginTop: '30px'}} />

@@ -1,8 +1,28 @@
 @import url('bootstrap/dist/css/bootstrap.min.css');
 
+[data-theme] {
+    will-change: background, color;
+}
+
 :root {
     --main-color: #041e2f;
     --secondary-color: rgba(255, 222, 173, 0.867);
+    --dark-white: #dee0ea;
+    --white: #fff;
+    --black: #000;
+}
+
+[data-theme="dark"] {
+    --main-color: #111111;
+    --secondary-color: #2980b9;
+    --dark-white: #dee0ea;
+    --white: #fff;
+    --black: #000;
+}
+
+[data-theme="cream"] {
+    --main-color: rgba(255, 222, 173, 0.867);
+    --secondary-color: #041e2f;
     --dark-white: #dee0ea;
     --white: #fff;
     --black: #000;
