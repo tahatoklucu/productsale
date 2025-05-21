@@ -78,12 +78,33 @@ function Navbar({loggedIn, setLoggedIn}) {
                 <NavLink className="navbar-item" to="/about">About Us</NavLink>
                 <NavLink className="navbar-item" to="/contact">Contact</NavLink>
             </div>
+            
+            {themeAlert && (
+                <Alert 
+                    variant="success" 
+                    onClose={() => setThemeAlert(false)} 
+                    dismissible
+                    style={{
+                        position: 'fixed',
+                        top: '20px',
+                        right: '20px',
+                        zIndex: 9999,
+                        width: 'auto',
+                        minWidth: '200px'
+                    }}
+                >
+                  Your theme will be updated in 3 seconds!
+                </Alert>
+            )}
             {basketCount > -1 && (
                 <span className='basketCount'>{basketCount}</span>
             )}
             <Link to="/mycart" className='shopIcon'> 
               <ShoppingBasketIcon />
             </Link>
+            <button className='theme-icon' onClick={handleClick}>
+              <DarkModeIcon />
+            </button> 
             {loggedIn ? 
              <>
               <Dropdown className='dropdown'>
@@ -108,28 +129,8 @@ function Navbar({loggedIn, setLoggedIn}) {
               </Dropdown>
               </>
               : 
-              <>
+              <>  
                 <Link className='btn btn-secondary btn-login' to="/login">Login</Link>
-                <button className='theme-icon' onClick={handleClick}>
-                  <DarkModeIcon />
-                </button>
-                {themeAlert && (
-                  <Alert 
-                      variant="success" 
-                      onClose={() => setThemeAlert(false)} 
-                      dismissible
-                      style={{
-                          position: 'fixed',
-                          top: '20px',
-                          right: '20px',
-                          zIndex: 9999,
-                          width: 'auto',
-                          minWidth: '200px'
-                      }}
-                  >
-                      Your theme will be updated in 3 seconds!
-                </Alert>
-                )}
                 {showAlert && (
                   <Alert 
                       variant="success" 
