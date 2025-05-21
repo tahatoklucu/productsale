@@ -35,6 +35,10 @@
     border-radius: 100%;
 }
 
+.buttons-container {
+    display: flex;
+}
+
 .theme-button {
     background-color: var(--black);
 }
@@ -52,4 +56,33 @@
 .theme-button4 {
     margin-left: 10px;
     background-color: var(--main-color);
+}
+
+.delete-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.delete-title {
+    font-size: 24px;
+    color: var(--secondary-color);
+    margin-left: 80px;
+    text-decoration: underline;
+}
+
+.delete-btn {
+    margin-left: 80px;
+}
+
+.delete-information, .delete-information-title {
+    margin-left: 80px;
+    margin-top: 10px;
+}
+
+.delete-information-title {
+    color: var(--secondary-color);
+}
+
+.delete-information {
+    color: var(--white);
 }
