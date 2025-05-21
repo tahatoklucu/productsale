@@ -78,7 +78,19 @@ function Navbar({loggedIn, setLoggedIn}) {
                 <NavLink className="navbar-item" to="/about">About Us</NavLink>
                 <NavLink className="navbar-item" to="/contact">Contact</NavLink>
             </div>
-            
+            {basketCount > -1 && (
+                <span className='basketCount'>{basketCount}</span>
+            )}
+            <Link to="/mycart" className='shopIcon'> 
+              <ShoppingBasketIcon />
+            </Link>
+            {loggedIn ?
+              <></>
+              :
+              <button className='theme-icon' onClick={handleClick}>
+                <DarkModeIcon />
+              </button> 
+            }
             {themeAlert && (
                 <Alert 
                     variant="success" 
@@ -96,15 +108,6 @@ function Navbar({loggedIn, setLoggedIn}) {
                   Your theme will be updated in 3 seconds!
                 </Alert>
             )}
-            {basketCount > -1 && (
-                <span className='basketCount'>{basketCount}</span>
-            )}
-            <Link to="/mycart" className='shopIcon'> 
-              <ShoppingBasketIcon />
-            </Link>
-            <button className='theme-icon' onClick={handleClick}>
-              <DarkModeIcon />
-            </button> 
             {loggedIn ? 
              <>
               <Dropdown className='dropdown'>
