@@ -12,7 +12,7 @@
     text-align: center;
 }
 
-/* Theme */
+/* Change Theme */
 
 .change-theme-container {
     display: flex;
@@ -31,6 +31,8 @@
     margin-top: 20px;
     border: none;
 }
+
+/* Delete Account Section */
 
 .buttons-container {
     display: flex;
@@ -63,4 +65,13 @@
 
 .delete-information {
     color: var(--white);
+}
+
+/* Settings - Responsive */
+
+@media (max-width: 768px) {
+    .theme-title, .theme-button, .delete-title, .delete-information-title, .delete-information, .delete-btn {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
 }
