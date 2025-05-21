@@ -1,17 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/Settings.css';
 import { motion } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
+import { Alert } from 'react-bootstrap';
 
 function Settings({loggedIn}) {
   
   const { theme, toggleTheme } = useTheme();
+  const [showAlert, setShowAlert] = useState(false);
 
-  const handleClickDark = () => {
+  const handleClick = () => {
     toggleTheme('dark');
+    setShowAlert(true);
     setTimeout(() => {
       window.location.reload(); 
-    }, 2000)
+    }, 3000)
   }
 
   return (
@@ -24,11 +27,27 @@ function Settings({loggedIn}) {
               <label className='theme-title'>Theme:</label>
               <div className='buttons-container'>
                   {theme === 'light' ? 
-                    <button className='btn btn-dark theme-button' onClick={handleClickDark}>Dark mode</button>
+                    <button className='btn btn-dark theme-button' onClick={handleClick}>Dark mode</button>
                     :
-                    <button className='btn btn-light theme-button' onClick={handleClickDark}>Light mode</button>
+                    <button className='btn btn-light theme-button' onClick={handleClick}>Light mode</button>
                   }
-                  
+                  {showAlert && (
+                    <Alert 
+                        variant="success" 
+                        onClose={() => setShowAlert(false)} 
+                        dismissible
+                        style={{
+                            position: 'fixed',
+                            top: '20px',
+                            right: '20px',
+                            zIndex: 9999,
+                            width: 'auto',
+                            minWidth: '200px'
+                        }}
+                    >
+                      Your theme will be updated in 3 seconds!
+                    </Alert>
+                  )}
               </div>
           </div>
           <hr style={{color: 'var(--white)', marginTop: '30px'}} />
