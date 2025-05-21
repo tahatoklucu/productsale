@@ -100,7 +100,6 @@ function UserDetails({ loggedIn }) {
                     variant="success" 
                     onClose={() => setShowAlert(false)} 
                     dismissible
-                    className={showAlert ? "fade-alert" : "fade-alert hiding"}
                     style={{
                         position: 'fixed',
                         top: '20px',
