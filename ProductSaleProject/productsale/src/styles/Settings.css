@@ -26,33 +26,15 @@
     text-decoration: underline;
 }
 
-.theme-button, .theme-button2, .theme-button3 {
+.theme-button {
     margin-left: 80px;
     margin-top: 20px;
-    width: 20px;
-    height: 20px;
     border: none;
-    border-radius: 100%;
 }
 
 .buttons-container {
     display: flex;
 }
-
-.theme-button {
-    background-color: var(--black);
-}
-
-.theme-button2 {
-    margin-left: 10px;
-    background-color: var(--white);
-}
-
-.theme-button3 {
-    margin-left: 10px;
-    background-color: var(--secondary-color);
-}
-
 
 .delete-container {
     display: flex;

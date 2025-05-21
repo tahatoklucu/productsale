@@ -14,20 +14,6 @@ function Settings({loggedIn}) {
     }, 2000)
   }
 
-  const handleClickLight = () => {
-    toggleTheme('light');
-    setTimeout(() => {
-      window.location.reload(); 
-    }, 2000)
-  }
-
-  const handleClickCream = () => {
-    toggleTheme('cream');
-    setTimeout(() => {
-      window.location.reload(); 
-    }, 2000)
-  }
-
   return (
     <>
       {loggedIn ? 
@@ -37,9 +23,12 @@ function Settings({loggedIn}) {
           <div className='change-theme-container'>
               <label className='theme-title'>Theme:</label>
               <div className='buttons-container'>
-                  <button className='theme-button' onClick={handleClickDark}></button>
-                  <button className='theme-button2' onClick={handleClickLight}></button>
-                  <button className='theme-button3' onClick={handleClickCream}></button>
+                  {theme === 'light' ? 
+                    <button className='btn btn-dark theme-button' onClick={handleClickDark}>Dark mode</button>
+                    :
+                    <button className='btn btn-light theme-button' onClick={handleClickDark}>Light mode</button>
+                  }
+                  
               </div>
           </div>
           <hr style={{color: 'var(--white)', marginTop: '30px'}} />

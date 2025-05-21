@@ -20,14 +20,6 @@
     --black: #000;
 }
 
-[data-theme="cream"] {
-    --main-color: rgba(255, 222, 173, 0.867);
-    --secondary-color: #041e2f;
-    --dark-white: #dee0ea;
-    --white: #fff;
-    --black: #000;
-}
-
 * {
     margin: 0;
     padding: 0;
