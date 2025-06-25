@@ -4,7 +4,7 @@ import { loginSchema } from '../schemas';
 import '../styles/Login.css'
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Alert } from 'react-bootstrap';
+import Alert from '@mui/material/Alert';
 
 function Login({setLoggedIn}) {
 
@@ -85,26 +85,22 @@ function Login({setLoggedIn}) {
             </div>
             <button className='login-button' type='submit'>Log In</button>
             {showAlert && (
-                <Alert 
-                    variant="danger" 
-                    onClose={() => setShowAlert(false)} 
-                    dismissible
-                    className={showAlert ? "fade-alert" : "fade-alert hiding"}
-                    style={{
-                        position: 'fixed',
-                        top: '20px',
-                        right: '20px',
-                        zIndex: 9999,
-                        width: 'auto',
-                        minWidth: '200px'
-                    }}
-                >
-                    Invalid email or password!
-                </Alert>
+                <Alert severity="error"
+                        onClose={() => setShowAlert(false)}  
+                        dismissible
+                        className={showAlert ? "fade-alert" : "fade-alert hiding"}
+                        style={{
+                            position: 'fixed',
+                            top: '20px',
+                            right: '20px',
+                            zIndex: 9999,
+                            width: 'auto',
+                            minWidth: '200px'
+                        }}>Invalid email or password!</Alert>
             )}
             {errorShowAlert && (
                 <Alert 
-                    variant="danger" 
+                    severity='error' 
                     onClose={() => setErrorShowAlert(false)} 
                     dismissible
                     className={errorShowAlert ? "fade-alert" : "fade-alert hiding"}
@@ -122,7 +118,7 @@ function Login({setLoggedIn}) {
             )}
             {logged && (
                 <Alert 
-                    variant="success" 
+                    severity="success" 
                     onClose={() => setLogged(false)} 
                     dismissible
                     className={logged ? "fade-alert" : "fade-alert hiding"}
