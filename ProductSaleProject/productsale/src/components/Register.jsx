@@ -4,7 +4,7 @@ import { registerSchema } from '../schemas';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Register.css';
 import { motion } from 'framer-motion';
-import { Alert } from 'react-bootstrap';
+import Alert from '@mui/material/Alert';
 
 function Register() {
 
@@ -84,7 +84,7 @@ function Register() {
         <button className='register-button' type='submit'>Register</button>
         {showAlert && (
             <Alert 
-                variant="success" 
+                severity="success" 
                 onClose={() => setShowAlert(false)} 
                 dismissible
                 className={showAlert ? "fade-alert" : "fade-alert hiding"}
@@ -102,7 +102,7 @@ function Register() {
         )}
         {errorShowAlert && (
             <Alert 
-                variant="danger" 
+                severity="error" 
                 onClose={() => setErrorShowAlert(false)} 
                 dismissible
                 className={errorShowAlert ? "fade-alert" : "fade-alert hiding"}
