@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../styles/Settings.css';
 import { motion } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
-import { Alert } from 'react-bootstrap';
+import Alert from '@mui/material/Alert';
 
 function Settings({loggedIn}) {
   
@@ -33,7 +33,7 @@ function Settings({loggedIn}) {
                   }
                   {showAlert && (
                     <Alert 
-                        variant="success" 
+                        severity="success" 
                         onClose={() => setShowAlert(false)} 
                         dismissible
                         style={{
