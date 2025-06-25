@@ -3,7 +3,7 @@ import '../styles/UserDetails.css';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PersonIcon from '@mui/icons-material/Person';
-import { Alert } from 'react-bootstrap';
+import Alert from '@mui/material/Alert';
 
 function UserDetails({ loggedIn }) {
 
@@ -97,7 +97,7 @@ function UserDetails({ loggedIn }) {
                 <button className='btn btn-success detail-button' onClick={handleUpdateProfile}>Update your profile</button>
                 {showAlert && (
                 <Alert 
-                    variant="success" 
+                    severity="success" 
                     onClose={() => setShowAlert(false)} 
                     dismissible
                     style={{
