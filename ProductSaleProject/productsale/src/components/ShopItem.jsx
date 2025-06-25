@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../styles/Shops.css'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { Alert } from 'react-bootstrap';
+import Alert from '@mui/material/Alert';
 
 function ShopItem({id, image, title, desc, price, onAddToCart}) {
   const navigate = useNavigate();
@@ -50,7 +50,7 @@ function ShopItem({id, image, title, desc, price, onAddToCart}) {
 
           {showAlert && (
                 <Alert 
-                    variant="success" 
+                    severity="success" 
                     onClose={() => setShowAlert(false)} 
                     dismissible
                     className={showAlert ? "fade-alert" : "fade-alert hiding"}
