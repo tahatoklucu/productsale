@@ -84,30 +84,6 @@ function Navbar({loggedIn, setLoggedIn}) {
             <Link to="/mycart" className='shopIcon'> 
               <ShoppingBasketIcon />
             </Link>
-            {loggedIn ?
-              <></>
-              :
-              <button className='theme-icon' onClick={handleClick}>
-                <DarkModeIcon />
-              </button> 
-            }
-            {themeAlert && (
-                <Alert 
-                    variant="success" 
-                    onClose={() => setThemeAlert(false)} 
-                    dismissible
-                    style={{
-                        position: 'fixed',
-                        top: '20px',
-                        right: '20px',
-                        zIndex: 9999,
-                        width: 'auto',
-                        minWidth: '200px'
-                    }}
-                >
-                  Your theme will be updated in 3 seconds!
-                </Alert>
-            )}
             {loggedIn ? 
              <>
               <Dropdown className='dropdown'>
