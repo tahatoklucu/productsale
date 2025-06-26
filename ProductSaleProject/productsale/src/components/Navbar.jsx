@@ -6,7 +6,6 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import PersonIcon from '@mui/icons-material/Person';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Alert from '@mui/material/Alert';
-import { useTheme } from '../contexts/ThemeContext';
 
 function Navbar({loggedIn, setLoggedIn}) {
   
@@ -14,9 +13,7 @@ function Navbar({loggedIn, setLoggedIn}) {
   const [username, setUsername] = useState('');
   const [avatar, setAvatar] = useState('');
   const [showAlert, setShowAlert] = useState(false);
-  const [themeAlert, setThemeAlert] = useState(false);
   const navigate = useNavigate();
-  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const updateBasketCount = () => {
@@ -54,14 +51,6 @@ function Navbar({loggedIn, setLoggedIn}) {
     }, 3000)
     setTimeout(() => {
       navigate('/login');
-    }, 3000)
-  }
-
-  const handleClick = () => {
-    toggleTheme('dark');
-    setThemeAlert(true);
-    setTimeout(() => {
-      window.location.reload(); 
     }, 3000)
   }
 
