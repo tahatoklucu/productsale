@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Table from 'react-bootstrap/Table';
 import '../styles/Cart.css';
-import { Alert } from 'react-bootstrap';
+import Alert from '@mui/material/Alert';
 import { motion } from 'framer-motion';
 
 function Cart() {
@@ -128,7 +128,7 @@ function Cart() {
                 </button>
                 {showDelete && (
                     <Alert 
-                        variant="light" 
+                        severity="info" 
                         onClose={() => setShowDelete(false)} 
                         dismissible
                         className={showDelete ? "fade-alert" : "fade-alert hiding"}
@@ -166,7 +166,7 @@ function Cart() {
                                 <button className='btn btn-light product-delete-btn' onClick={() => handleDelete(product.id)}>X</button>
                                 {showAlert && (
                                     <Alert 
-                                        variant="danger" 
+                                        severity="error" 
                                         onClose={() => setShowAlert(false)} 
                                         dismissible
                                         className={showAlert ? "fade-alert" : "fade-alert hiding"}

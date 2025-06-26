@@ -5,8 +5,7 @@ import '../styles/Navbar.css';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import PersonIcon from '@mui/icons-material/Person';
 import Dropdown from 'react-bootstrap/Dropdown';
-import { Alert } from 'react-bootstrap';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
+import Alert from '@mui/material/Alert';
 import { useTheme } from '../contexts/ThemeContext';
 
 function Navbar({loggedIn, setLoggedIn}) {
@@ -112,7 +111,7 @@ function Navbar({loggedIn, setLoggedIn}) {
                 <Link className='btn btn-secondary btn-login' to="/login">Login</Link>
                 {showAlert && (
                   <Alert 
-                      variant="success" 
+                      severity="success" 
                       onClose={() => setShowAlert(false)} 
                       dismissible
                       className={showAlert ? "fade-alert" : "fade-alert hiding"}

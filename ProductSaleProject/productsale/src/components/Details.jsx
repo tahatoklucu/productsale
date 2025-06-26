@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import '../styles/Details.css';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
-import { Alert } from 'react-bootstrap';
+import Alert from '@mui/material/Alert';
 import { motion } from 'framer-motion';
 
 function Details() {
@@ -81,7 +81,7 @@ function Details() {
             <button className='btn btn-warning' onClick={handleSubmit}>Add to cart</button>
             {showAlert && (
                 <Alert 
-                    variant="success" 
+                    severity="success" 
                     onClose={() => setShowAlert(false)} 
                     dismissible
                     className={showAlert ? "fade-alert" : "fade-alert hiding"}
