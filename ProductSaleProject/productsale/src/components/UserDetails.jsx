@@ -14,6 +14,7 @@ function UserDetails({ loggedIn }) {
   const [avatarPreview, setAvatarPreview] = useState('');
   const fileInputRef = useRef(null);
   const [showAlert, setShowAlert] = useState(false);
+  const [errorAlert, setErrorAlert] = useState(false);
 
   useEffect(() => {
     const currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
@@ -45,19 +46,26 @@ function UserDetails({ loggedIn }) {
       avatar: avatarPreview
     };
 
-    setShowAlert(true);
-    localStorage.setItem('currentUser', JSON.stringify(updatedUser));
+    if(userPassword === '' || userEmail === '' || username === ''){
+      setErrorAlert(true);
+      setTimeout(() => {
+          setTimeout(() => setErrorAlert(false), 500);
+      }, 3000);
+      return;
+    } else {
+      setShowAlert(true);
+      localStorage.setItem('currentUser', JSON.stringify(updatedUser));
+      const allUsers = JSON.parse(localStorage.getItem('users')) || [];
+      const userIndex = allUsers.findIndex(user => user.email === userEmail);
 
-    const allUsers = JSON.parse(localStorage.getItem('users')) || [];
-    const userIndex = allUsers.findIndex(user => user.email === userEmail);
-
-    if(userIndex !== -1) {
-      allUsers[userIndex] = updatedUser;
-      localStorage.setItem('users', JSON.stringify(allUsers));
+      if(userIndex !== -1) {
+        allUsers[userIndex] = updatedUser;
+        localStorage.setItem('users', JSON.stringify(allUsers));
+      }
+      setTimeout(() => {
+        window.location.reload(); 
+      }, 3000);
     }
-    setTimeout(() => {
-      window.location.reload(); 
-    }, 3000);
   }
 
   return (
@@ -112,6 +120,19 @@ function UserDetails({ loggedIn }) {
                 You have successfully updated your profile.
                 </Alert>
                 )}
+                {
+                  errorAlert && (
+                    <Alert severity="error" dismissible
+                    style={{
+                        position: 'fixed',
+                        top: '20px',
+                        right: '20px',
+                        zIndex: 9999,
+                        width: 'auto',
+                        minWidth: '200px'
+                    }}>You cannot update your information with empty fields.</Alert>
+                  )
+                }
                 <p>
                   <Link to="/" className='back-button'>Back to the Main Page</Link>
                 </p>  

@@ -17,6 +17,13 @@ function Settings({loggedIn}) {
     }, 3000)
   }
 
+  const handleDekete = () => {
+    localStorage.removeItem("currentUser");
+    const allUsers = JSON.parse(localStorage.getItem('users')) || [];
+    const userIndex = allUsers.findIndex(user => user.email === userEmail);
+    localStorage.removeItem("users")
+  }
+
   return (
     <>
       {loggedIn ? 
