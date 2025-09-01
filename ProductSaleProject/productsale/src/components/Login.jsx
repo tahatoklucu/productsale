@@ -71,7 +71,7 @@ function Login({setLoggedIn}) {
 
     const loginValues = [values.email, values.password]
   return (
-        <motion.form onSubmit={handleSubmit} className='mainForm' initial={{opacity: 0.7}}  animate={{opacity: 1}} transition={{duration: 0.75}} exit={{opacity: 0}}>
+        <form onSubmit={handleSubmit} className='mainForm' data-aos="fade-up">
             <div className='loginTitle'>Login</div>
             <div className='form-div'>
                 <label className='form-label'>Email</label>
@@ -135,7 +135,7 @@ function Login({setLoggedIn}) {
                 </Alert>
             )}
             <Link to='/register' className='register-link'>Create a new account</Link>
-        </motion.form>
+        </form>
   )
 }
 

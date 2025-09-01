@@ -40,7 +40,7 @@ function ShopItem({id, image, title, desc, price, onAddToCart}) {
   }
 
   return (
-    <div className='productItem'>
+    <div className='productItem' data-aos="fade-up">
         <img className='image' src={imgSrc} onError={() => setImgSrc("/fallback-image.png")}></img>
         <h4>{title}</h4>
         <p>{price} $</p>

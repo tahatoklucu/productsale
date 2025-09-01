@@ -1,11 +1,10 @@
 import React from 'react'
 import shoppingBanner from '../assets/reactlogo.png';
 import '../styles/About.css';
-import { motion } from 'framer-motion';
 
 function About() {
   return (
-    <motion.div className='about' initial={{opacity: 0.7}} transition={{duration: 0.75}} animate={{opacity: 1}} exit={{opacity: 0}}>
+    <div className='about' data-aos="fade-up">
       <div className='aboutTop' style={{backgroundImage: `url(${shoppingBanner})`}}></div>
       <div className='aboutBottom'>
         <h1>About Us</h1>
@@ -20,7 +19,7 @@ function About() {
           <li className='tech-item'>Optimized Performance with fast loading speeds and SEO-friendly architecture</li>
         </ul>
       </div>
-    </motion.div>
+    </div>
   )
 }
 

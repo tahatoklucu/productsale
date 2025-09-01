@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import '../styles/UserDetails.css';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PersonIcon from '@mui/icons-material/Person';
 import Alert from '@mui/material/Alert';
@@ -69,9 +68,9 @@ function UserDetails({ loggedIn }) {
   }
 
   return (
-    <>
+    <div data-aos="fade-up">
       {loggedIn ?
-        <motion.div className='user-main' initial={{opacity: 0.7}}  animate={{opacity: 1}} transition={{duration: 0.75}} exit={{opacity: 0}}>
+        <div className='user-main'>
           <div className='user-title'>User Details</div>
           <div className='userPage'>
             <div className='userAvatar'>
@@ -139,7 +138,7 @@ function UserDetails({ loggedIn }) {
               </div>
             </div>
             </div>
-        </motion.div>
+        </div>
         : 
         <div className='not-logged-container'>
           <div className='user-title'>User Details</div>
@@ -159,7 +158,7 @@ function UserDetails({ loggedIn }) {
         </div>
       }
       
-    </>
+    </div>
   )
 }
 

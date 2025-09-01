@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import '../styles/Settings.css';
-import { motion } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
 import Alert from '@mui/material/Alert';
 
@@ -25,9 +24,9 @@ function Settings({loggedIn}) {
   }
 
   return (
-    <>
+    <div data-aos="fade-up">
       {loggedIn ? 
-        <motion.div className='settings-main' initial={{opacity: 0.7}}  animate={{opacity: 1}} transition={{duration: 0.75}} exit={{opacity: 0}}>
+        <div className='settings-main'>
           <div className='settings-title'>Settings</div>
           <hr style={{color: 'var(--white)', marginTop: '30px'}} />
           <div className='change-theme-container'>
@@ -67,7 +66,7 @@ function Settings({loggedIn}) {
             <button className='btn btn-danger delete-btn'>Delete Account</button>
           </div>
           <hr style={{color: 'var(--white)', marginTop: '30px'}} />
-        </motion.div>
+        </div>
         :
         <div className='not-logged-container'>
           <div className='user-title'>User Details</div>
@@ -87,7 +86,7 @@ function Settings({loggedIn}) {
         </div>
     }
         
-    </>
+    </div>
   )
 }
 

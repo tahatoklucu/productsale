@@ -15,7 +15,6 @@ import UserDetails from './components/UserDetails';
 import Settings from './components/Settings';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { useTheme } from './contexts/ThemeContext';
-
 function App() {
 
   const [basketCount, setBasketCount] = useState(0);

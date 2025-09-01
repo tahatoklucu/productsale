@@ -3,7 +3,6 @@ import { useFormik } from 'formik'
 import { registerSchema } from '../schemas';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Register.css';
-import { motion } from 'framer-motion';
 import Alert from '@mui/material/Alert';
 
 function Register() {
@@ -59,7 +58,7 @@ function Register() {
             },
         });
   return (
-    <motion.form onSubmit={handleSubmit} className='register-mainForm' initial={{opacity: 0.7}}  animate={{opacity: 1}} transition={{duration: 0.75}} exit={{opacity: 0}}>
+    <form onSubmit={handleSubmit} className='register-mainForm' data-aos="fade-up">
         <div className='registerTitle'>Register</div>
         <div className='register-div'>
             <label className='register-label'>Username</label>
@@ -119,7 +118,7 @@ function Register() {
             </Alert>
         )}
         <Link to='/login' className='register-link'>Back to the login page</Link>
-    </motion.form>
+    </form>
   )
 }
 

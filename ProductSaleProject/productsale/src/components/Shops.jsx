@@ -4,7 +4,6 @@ import '../styles/Shops.css';
 import axios from 'axios';
 import { Alert } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
-import { motion } from 'framer-motion';
 
 
 function Shops({setBasketCount}) {
@@ -51,7 +50,7 @@ function Shops({setBasketCount}) {
 
    
   return (
-    <motion.div className='products' initial={{opacity: 0.7}} animate={{opacity: 1}} transition={{duration: 0.75}} exit={{opacity: 0}} >
+    <div className='products' data-aos="fade-up" >
         <h1 className='productsTitle'>Our Products for Sale</h1>
         <form onSubmit={handleSearch} className='searchForm'>
                 <Form.Control 
@@ -63,7 +62,7 @@ function Shops({setBasketCount}) {
                 <button className='btn btn-info' type='submit'>Search</button>
         </form>
              {isLoading ? (
-                <div className='loading-container'>
+                <div className='loading-container' data-aos="fade-up">
                     <span className='loading-span'>
                         {[
                         'light',
@@ -75,7 +74,7 @@ function Shops({setBasketCount}) {
                     </span>
               </div>
             ) : (
-                <div className='productList'>
+                <div className='productList' data-aos="fade-up">
                     {filteredProducts.map(item => (
                         <ShopItem
                             key={item.id}
@@ -89,7 +88,7 @@ function Shops({setBasketCount}) {
                     ))}
                 </div>
             )}
-    </motion.div>
+    </div>
   )
 }
 
